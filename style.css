@@ -1,0 +1,309 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container {
+    position: relative;
+    animation: rotate 4s ease forwards;
+    margin-left: 90px;
+}
+
+#tesoura-cima, #tesoura-baixo {
+    position: absolute;
+    rotate: 90deg;
+
+}
+#tesoura-cima {
+    width: 80px;
+    top: -18px;
+    left: -2px;
+    rotate: 90deg;
+    animation: tesoura-cima 1s ease 4, infinitecuttinup 5s infinite 4s ease;
+}
+/*tesoura-cima fechada 120deg*/
+/*tesoura-baixo fechada 60deg*/
+#tesoura-baixo {
+    rotate: 90deg;
+    animation: tesoura-baixo 1s ease 4, infinitecuttindown 5s infinite 4s ease;
+    width: 70px;
+}
+
+
+header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 2;
+}
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+header li {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header li > span {
+    position: absolute;
+    right: -25px;
+    top: 0;
+    cursor: pointer;
+}
+header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+}
+#cadastro {
+    border: 1px solid #fff;
+    padding: 5px;
+}
+#logo {
+
+    display: none;
+}
+#logo img {
+    height: 100px;
+    width: 100px;
+}
+
+
+
+#logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: default;
+}
+#logo-link > span {
+    font-size: 50pt;
+    margin-left: 20px;
+    position: relative;
+}
+#logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#logo-link  span > div {
+    width: 20px;
+    position: absolute;
+    left: -85px;
+    height: 20px;
+    bottom: 55px;
+}
+
+
+#logo-insection {
+    height: 200px;
+}
+
+@keyframes infinitecuttinup {
+    80% {
+        rotate: 90deg;
+    }
+    85% {
+        rotate: 120deg;
+    }
+    90% {
+        rotate: 90deg;
+    }
+    95% {
+        rotate: 120deg;
+    }
+    100% {
+        rotate: 90deg;
+    }
+}
+@keyframes infinitecuttindown {
+    80% {
+        rotate: 90deg;
+    }
+    85% {
+        rotate: 60deg;
+    }
+    90% {
+        rotate: 90deg;
+    }
+    95% {
+        rotate: 60deg;
+    }
+    100% {
+        rotate: 90deg;
+    }
+}
+
+
+@keyframes tesoura-cima {
+    0% {
+        rotate: 90deg;
+    }
+    25% {
+        rotate: 120deg;
+    }
+    50% {
+        rotate: 90deg;
+    }
+    75% {
+        rotate: 120deg;
+    }
+
+    100% {
+        rotate: 90deg;
+    }
+}
+@keyframes tesoura-baixo {
+    0% {
+        rotate: 90deg;
+    }
+    25% {
+        rotate: 60deg;
+    }
+    50% {
+        rotate: 90deg;
+    }
+    75% {
+        rotate: 60deg;
+    }
+    100% {
+        rotate: 90deg;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        translate: 400px;
+    }
+    
+    60% {
+        rotate: 0deg;
+    }
+    80% {
+        translate: 0;
+    }
+    85% {
+        rotate: 120deg;
+    }
+    90% {
+        
+        rotate: 120deg;
+    }
+    100% {
+        
+        rotate: 120deg;
+    }
+}
+
+#home-first {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 980px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    background-color: black;
+    color: #fff;
+    position: relative;
+    padding-top: 100px;
+}
+#home-first > footer {
+    position: absolute;
+    bottom: 0;
+}
+#home-first > footer span {
+    font-size: 30pt;
+    animation: updown 2s infinite;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+#logo-link small {
+    animation: aparecer 6s 1;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.titleLetters {
+    opacity: 1;
+    margin-left: 0!important;
+}
+
+@media (max-width:600px) {
+    #logo-title {
+        width: 220px;
+    }
+    #logo-link > span {
+        margin-left: 0;
+    }
+    #logo-link  span > div {
+        bottom: 80px;
+        left: -75px;
+    }
+
+    @keyframes rotate {
+        0% {
+            translate: 200px;
+        }
+        60% {
+            rotate: 0deg;
+        }
+        80% {
+            translate: 0;
+        }
+        85% {
+            rotate: 120deg;
+        }
+        90% {
+            
+            rotate: 120deg;
+        }
+        100% {
+            
+            rotate: 120deg;
+        }
+    }   
+
+    header {
+        font-size: 10pt;
+    }
+}
