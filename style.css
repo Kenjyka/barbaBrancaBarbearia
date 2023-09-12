@@ -118,9 +118,6 @@ header a {
 }
 
 
-#logo-insection {
-    height: 200px;
-}
 
 @keyframes infinitecuttinup {
     80% {
@@ -276,7 +273,25 @@ header a {
 
 #section-1 {
     width: 100vw;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+#logo-insection {
+    height: 200px;
+}
+#carousel-main {
+    max-width: 1200px;
+}
+.carousel-item {
+    height: 90vh;
+    
+}
+.carousel-item img {
+    height: 90vh;
+}
+
 
 @media (max-width:600px) {
     #logo-title {
