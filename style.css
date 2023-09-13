@@ -282,14 +282,31 @@ header a {
     height: 200px;
 }
 #carousel-main {
-    max-width: 1200px;
+    height: 90vh;
+    max-height: 766px;
+    width: 100vw;
+    max-width: 1366px;
+}
+.carousel-inner {
+    max-height: 766px;
+    max-width: 1366px;
+    overflow: hidden;
 }
 .carousel-item {
-    height: 90vh;
-    
+    overflow: hidden;
+    max-height: 766px;
 }
-.carousel-item img {
+.carousel-inner .active img {
     height: 90vh;
+    max-height: 766px;
+    position: relative;
+    max-width: 1366px;
+    object-fit: cover;
+    min-height: 500px;
+}
+
+.left-carousel > p,.right-carousel > p {
+    font-style: italic;
 }
 
 
@@ -297,12 +314,22 @@ header a {
     #logo-title {
         width: 220px;
     }
+    #logo-link {
+        margin-left: 10px;
+    }
     #logo-link > span {
         margin-left: 0;
     }
     #logo-link  span > div {
         bottom: 80px;
         left: -75px;
+    }
+    #tesoura-cima {
+        width: 60px;
+        top: -12px;
+    }
+    #tesoura-baixo {
+        width: 52px;
     }
 
     @keyframes rotate {
@@ -330,5 +357,33 @@ header a {
 
     header {
         font-size: 10pt;
+    }
+}
+
+@media (min-width: 1000px) {
+    .carousel-inner .left-carousel {
+        position: absolute;
+        top: 0;
+        left: 150px;
+        width: 600px!important;
+        width: fit-content;
+        font-size: 2em;
+    }
+    
+    .left-carousel > h2,.right-carousel > h2 {
+        font-size: 2em;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .left-carousel > p,.right-carousel > p {
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .right-carousel {
+        top: 0;
+        right: 150px!important;
+        width: 600px!important;
+        font-size: 2em;
+        left: auto!important;
     }
 }
