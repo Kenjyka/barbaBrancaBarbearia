@@ -1,9 +1,15 @@
+:root {
+    --primaria: #fff;
+}
+
 *{
     padding: 0;
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
 }
-
+ul, ol {
+    padding-left: 0!important;
+}
 body {
     display: flex;
     justify-content: center;
@@ -309,16 +315,22 @@ header a {
     font-style: italic;
 }
 
+#promocionais {
+    display: flex;
+    color: #000;
+    gap: 10px;
+}
+#promocionais > article {
+    background-color: var(--primaria);
+}
 
-@media (max-width:600px) {
+
+@media (max-width:800px) {
     #logo-title {
         width: 220px;
     }
-    #logo-link {
-        margin-left: 10px;
-    }
     #logo-link > span {
-        margin-left: 0;
+        margin-left: 15px;
     }
     #logo-link  span > div {
         bottom: 80px;
@@ -360,7 +372,7 @@ header a {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 801px) {
     .carousel-inner .left-carousel {
         position: absolute;
         top: 0;
