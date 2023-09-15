@@ -478,6 +478,11 @@ header a {
     #promocionais h4 {
         font-size: 1.4em;
     }
+    #carousel-main {
+        min-height: 90vh;
+        height: auto;
+        max-height: fit-content;
+    }
 }
 
 @media (min-width: 801px) {

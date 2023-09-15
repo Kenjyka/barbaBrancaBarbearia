@@ -33,15 +33,24 @@ let indexCardsPromocionais = 0
 rodaPromocionais()
 
 promocionaisCards.forEach((element, index) => {
-
+  const elementFilhos = [...element.children]
   element.addEventListener('mouseenter', () => {
     (index == promocionaisCards.length -1) ? indexCardsPromocionais = 0 : indexCardsPromocionais = index;
-    if (continuaCarouselCards == true) continuaCarouselCards = false;
+    continuaCarouselCards = false;
     limpaPromocionais()
   })
 
   element.addEventListener('mouseout', () => {
-      if (continuaCarouselCards == false) continuaCarouselCards = true;
+    console.log('eita')
+    continuaCarouselCards = true;
+  })
+
+  elementFilhos.forEach(filho => {
+    console.log(filho)
+    filho.addEventListener('mouseenter', () => {
+      console.log('ayo')
+      continuaCarouselCards = false
+    })
   })
 })
 
@@ -59,6 +68,7 @@ function rodaPromocionais () {
 }
 
 setInterval(() => {
+  console.log(continuaCarouselCards)
   if(continuaCarouselCards) {
     (indexCardsPromocionais == promocionaisCards.length - 1) ? indexCardsPromocionais = 0 : indexCardsPromocionais++;
     rodaPromocionais() 
@@ -67,18 +77,18 @@ setInterval(() => {
 
 
 //scroll events and shenanigans
-const cuidadosBarba = document.getElementById('cuidados-barba'),
-perdaCapilar = document.getElementById('perda-capilar'),
-cortesEstilosos = document.getElementById('cortes-estilosos')
+// const cuidadosBarba = document.getElementById('cuidados-barba'),
+// perdaCapilar = document.getElementById('perda-capilar'),
+// cortesEstilosos = document.getElementById('cortes-estilosos')
 
 
-window.addEventListener('scroll', () => {
-  oElementoEstaVisivel(cuidadosBarba)
-  oElementoEstaVisivel(perdaCapilar)
-  oElementoEstaVisivel(cortesEstilosos)
-})
+// window.addEventListener('scroll', () => {
+//   oElementoEstaVisivel(cuidadosBarba)
+//   oElementoEstaVisivel(perdaCapilar)
+//   oElementoEstaVisivel(cortesEstilosos)
+// })
 
-function oElementoEstaVisivel(elemento) {
-  let area = elemento.getBoundingClientRect()
-  console.log(area, elemento)
-}
+// function oElementoEstaVisivel(elemento) {
+//   let area = elemento.getBoundingClientRect()
+//   console.log(area.top, elemento)
+// }
