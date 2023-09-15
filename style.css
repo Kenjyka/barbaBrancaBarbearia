@@ -55,7 +55,7 @@ header {
     justify-content: center;
     align-items: center;
     color: #fff;
-    z-index: 2;
+    z-index: 3;
 }
 header ul {
     list-style: none;
@@ -353,16 +353,70 @@ header a {
     justify-content: center;
     max-width: 200px;
 }
-article:hover, article.active {
+#promocionais > article:hover, #promocionais > article.active {
     background-color: #fff!important;
     color: #000;
     border: 0!important;
     transition: background-color 1s, color 1s;
 }
-article:hover > p, article.active > p {
+#promocionais > article:hover > p, #promocionais > article.active > p {
     opacity: 1!important;
     position: relative!important;
     transition: opacity 1s;
+}
+
+
+.contedor {
+    height: 90vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    color: var(--primaria);
+    box-sizing: border-box;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -1px;
+}
+.contedor h1 {
+    font-size: 2em;
+    text-align: center;
+}
+.contedor span {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    width: fit-content;
+}
+.contedor a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+.contedor > span {
+    outline: 1px solid #ccc;
+    padding: 4px;
+}
+.contedor-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#cuidados-barba > .contedor-background {
+    background-image: url(imagens/estilo-barba.jpg);
+}
+.blur {
+    filter:grayscale(1) brightness(.1);
+    
 }
 
 

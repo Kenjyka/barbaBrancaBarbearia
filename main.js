@@ -30,22 +30,18 @@ const promocionais = document.getElementById('promocionais')
 const promocionaisCards = [...promocionais.querySelectorAll('article')]
 let continuaCarouselCards = true
 let indexCardsPromocionais = 0
-let promocionaisCardsSaindoMouse = false
 rodaPromocionais()
 
 promocionaisCards.forEach((element, index) => {
+
   element.addEventListener('mouseenter', () => {
-    (index == promocionaisCards.length -1) ? indexCardsPromocionais = 0 : indexCardsPromocionais = index + 1;
+    (index == promocionaisCards.length -1) ? indexCardsPromocionais = 0 : indexCardsPromocionais = index;
     if (continuaCarouselCards == true) continuaCarouselCards = false;
     limpaPromocionais()
   })
+
   element.addEventListener('mouseout', () => {
-    if (!promocionaisCardsSaindoMouse) {
-      promocionaisCardsSaindoMouse = true
       if (continuaCarouselCards == false) continuaCarouselCards = true;
-      rodaPromocionais()
-      promocionaisCardsSaindoMouse = false
-    }
   })
 })
 
@@ -57,18 +53,32 @@ function limpaPromocionais () {
 
 function rodaPromocionais () {
   if (continuaCarouselCards) {
-      limpaPromocionais()
+      limpaPromocionais();
       promocionaisCards[indexCardsPromocionais].classList.add('active');
-      (indexCardsPromocionais == promocionaisCards.length - 1) ? indexCardsPromocionais = 0 : indexCardsPromocionais++;
   }
 }
 
 setInterval(() => {
-  rodaPromocionais()
+  if(continuaCarouselCards) {
+    (indexCardsPromocionais == promocionaisCards.length - 1) ? indexCardsPromocionais = 0 : indexCardsPromocionais++;
+    rodaPromocionais() 
+  }
 }, 5000);
 
 
+//scroll events and shenanigans
+const cuidadosBarba = document.getElementById('cuidados-barba'),
+perdaCapilar = document.getElementById('perda-capilar'),
+cortesEstilosos = document.getElementById('cortes-estilosos')
 
 
+window.addEventListener('scroll', () => {
+  oElementoEstaVisivel(cuidadosBarba)
+  oElementoEstaVisivel(perdaCapilar)
+  oElementoEstaVisivel(cortesEstilosos)
+})
 
-
+function oElementoEstaVisivel(elemento) {
+  let area = elemento.getBoundingClientRect()
+  console.log(area, elemento)
+}
