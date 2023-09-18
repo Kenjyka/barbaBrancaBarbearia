@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
 }
 ul, ol {
     padding-left: 0!important;
@@ -18,6 +19,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    
+    &::-webkit-scrollbar {
+        background-color: #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: 2px solid #fff;
+        border-radius: 20px;
+    }
 }
 #container {
     position: relative;
@@ -332,7 +342,6 @@ header a {
     background-color: #000;
     width: 220px;
     height: 320px;
-    padding: 20px!important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,31 +349,69 @@ header a {
     text-align: center;
     border: 2px solid rgb(177, 177, 177);
     box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
 }
 
 #promocionais h4 {
     font-size: 1.8em;
+    z-index: 2;
 }
 
-#promocionais > article > p {
+#promocionais > article > .front-promocionais > p {
     position: absolute;
     opacity: 0;
     align-items: center;
     justify-content: center;
     max-width: 200px;
 }
-#promocionais > article:hover, #promocionais > article.active {
-    background-color: #fff!important;
+#promocionais > article:hover .front-promocionais, #promocionais > article.active .front-promocionais {
+    background-color: #ffffff8a!important;
     color: #000;
     border: 0!important;
-    transition: background-color 1s, color 1s;
+    transition: color 1s;
 }
-#promocionais > article:hover > p, #promocionais > article.active > p {
+#promocionais > article:hover  p, #promocionais > article.active  p {
     opacity: 1!important;
     position: relative!important;
     transition: opacity 1s;
 }
-
+.front-promocionais {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 20px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: default;
+}
+.background-promocionais {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index:0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-position: center center;
+    filter: brightness(.5) grayscale(1);
+}
+#promocionais> article:hover > .background-promocionais, article.active > .background-promocionais {
+    display: block!important;
+}
+#dia-especial {
+    background-image: url(imagens/pexels-natalie-bond-3371094.jpg);
+}
+#indique-amigo {
+    background-image: url(imagens/amigos.jpg);
+}
+#recompensas-exclusivas {
+    background-image: url(imagens/bartender.jpg);
+}
 
 .contedor {
     height: 90vh;
@@ -373,7 +420,7 @@ header a {
     display: flex;
     color: var(--primaria);
     box-sizing: border-box;
-    padding: 40px;
+    padding: 40px 0;
     flex-direction: column;
     align-items: center;
     margin-top: -1px;
@@ -412,11 +459,78 @@ header a {
 }
 
 #cuidados-barba > .contedor-background {
+    background-color: #000;
     background-image: url(imagens/estilo-barba.jpg);
+}
+.secao-comentarios {
+    display: flex;
+    margin: 5em 200px 0 200px;
+    width: 80%;
+    height: 350px;
+    gap: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    z-index: 2;
+    &::-webkit-scrollbar {
+        background-color: #ffffff46;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #000000;
+        border-radius: 20px;
+    }
+}
+.comentario {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 10px;
+    width: 250px;
+    height: 300px;
+    font-size: 1em;
+    border: 2px solid rgb(177, 177, 177);
+    padding: 10px;
+    position: relative;
+    & > h4 {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+
+    & > p {
+        margin-left: 20px;
+        text-align: left;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        height: 80%;
+    }
+    & > p::-webkit-scrollbar {
+        display: none;
+    }
+    & > small {
+        width: 100%;
+        text-align: right;
+        color: #ccc;
+        font-size: 1em;
+        margin-right: 20px;
+        text-transform: capitalize;
+    }
+    & > span {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+    }
 }
 .blur {
     filter:grayscale(1) brightness(.1);
-    
 }
 
 
@@ -483,6 +597,23 @@ header a {
         height: auto;
         max-height: fit-content;
     }
+
+    .comentario {
+        height: 250px!important;
+        width: 200px!important;
+
+        & > p {
+            font-size: .8em;
+        }
+
+        & > h4 {
+            font-size: 1.2em;
+        }
+    }
+
+    .secao-comentarios {
+        height: 300px;
+    }
 }
 
 @media (min-width: 801px) {
@@ -511,4 +642,5 @@ header a {
         font-size: 2em;
         left: auto!important;
     }
+    
 }

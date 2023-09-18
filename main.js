@@ -33,22 +33,26 @@ let indexCardsPromocionais = 0
 rodaPromocionais()
 
 promocionaisCards.forEach((element, index) => {
-  const elementFilhos = [...element.children]
+  const elementFilho = element.querySelector('.front-promocionais')
+  const elementNeto = [...elementFilho.children]
+  console.log(elementFilho)
   element.addEventListener('mouseenter', () => {
-    (index == promocionaisCards.length -1) ? indexCardsPromocionais = 0 : indexCardsPromocionais = index;
+    indexCardsPromocionais = index;
     continuaCarouselCards = false;
     limpaPromocionais()
   })
 
-  element.addEventListener('mouseout', () => {
+
+  elementFilho.addEventListener('mouseout', () => {
     console.log('eita')
     continuaCarouselCards = true;
   })
-
-  elementFilhos.forEach(filho => {
-    console.log(filho)
-    filho.addEventListener('mouseenter', () => {
-      console.log('ayo')
+  elementFilho.addEventListener('mouseenter', () => {
+    console.log('ayo')
+    continuaCarouselCards = false
+  })
+  elementNeto.forEach(neto => {
+    neto.addEventListener('mouseenter', ()=> {
       continuaCarouselCards = false
     })
   })
@@ -74,6 +78,50 @@ setInterval(() => {
     rodaPromocionais() 
   }
 }, 5000);
+
+
+
+// comentarios
+const viewportWidth = window.innerWidth
+const secoesComentarios = document.querySelectorAll('.contedor')
+let podeRodarComentarios = true
+
+
+secoesComentarios.forEach(element => {
+  console.log(element);
+  const barraComentario = element.querySelector('.secao-comentarios')
+  const comentarios = [...barraComentario.children]
+
+  comentarios.forEach(comentario => {
+    const netosComentario = [... comentario.children]
+    comentario.addEventListener('mouseenter', () => {
+      console.log('oya')
+      podeRodarComentarios = false
+    })
+    comentario.addEventListener('mouseout', () => {
+      podeRodarComentarios = true
+    })
+    netosComentario.forEach(neto => {
+      neto.addEventListener('mouseenter', () => {
+        podeRodarComentarios = false
+      })
+    })
+  })
+  
+
+
+  setInterval(() => {
+    if (podeRodarComentarios) scrollBarraComentario(barraComentario);
+  }, 10000);
+})
+
+function scrollBarraComentario(barra){
+  const scrollMax = barra.scrollWidth - barra.clientWidth;
+  (scrollMax == barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 300;
+}
+
+
+
 
 
 //scroll events and shenanigans
