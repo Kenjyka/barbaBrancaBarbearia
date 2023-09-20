@@ -125,18 +125,39 @@ function scrollBarraComentario(barra){
 
 
 //scroll events and shenanigans
-// const cuidadosBarba = document.getElementById('cuidados-barba'),
-// perdaCapilar = document.getElementById('perda-capilar'),
-// cortesEstilosos = document.getElementById('cortes-estilosos')
+const logo = document.getElementById('logo')
+const cuidadosBarba = document.getElementById('cuidados-barba'),
+perdaCapilar = document.getElementById('perda-capilar'),
+cortesEstilosos = document.getElementById('cortes-estilosos')
+const logoBig = document.getElementById('logo-insection')
+logo.style.opacity = '0'
+
+if(window.scrollY != 0) {
+  window.scrollTo(0,0)
+}
+let maxDistance = boundingShenanigans(logoBig).bottom
 
 
-// window.addEventListener('scroll', () => {
-//   oElementoEstaVisivel(cuidadosBarba)
-//   oElementoEstaVisivel(perdaCapilar)
-//   oElementoEstaVisivel(cortesEstilosos)
-// })
+window.addEventListener('scroll', () => {
+  let nowDistance = boundingShenanigans(logoBig).bottom
+  logoBig.style.height = `${100  +  100 * (nowDistance / maxDistance)}px`
+  logoBig.style.width = `${100  +  100 * (nowDistance / maxDistance)}px`
 
-// function oElementoEstaVisivel(elemento) {
-//   let area = elemento.getBoundingClientRect()
-//   console.log(area.top, elemento)
-// }
+  if (nowDistance - 100 < 50) {
+    logoBig.style.height = `${65 +  100 * (nowDistance / maxDistance)}px`
+    logoBig.style.width = `${65 +  100 * (nowDistance / maxDistance)}px`
+  }
+
+  if (nowDistance - 100 <= 0 ) {
+    logoBig.style.opacity = '0'
+    logo.style.opacity = '1'
+  } else {
+    logoBig.style.opacity = '1'
+    logo.style.opacity = '0'
+  }
+})
+
+function boundingShenanigans(elemento) {
+  let area = elemento.getBoundingClientRect()
+  return area
+}
