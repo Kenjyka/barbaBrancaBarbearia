@@ -1,3 +1,19 @@
+// mobile things 
+const hamburguerMobile = document.querySelector("#menu-mobile")
+const sairMobile = document.querySelector("#sairMobile")
+const linksMobile = document.querySelector("#linksMobile")
+
+hamburguerMobile.addEventListener("click", ()=> {
+  linksMobile.classList.toggle("active")
+})
+sairMobile.addEventListener("click", ()=> {
+  linksMobile.classList.toggle("active")
+})
+
+
+
+
+
 tituloLogo = Array.from(document.querySelectorAll('.titleLetters'))
 indexTituloLogo = tituloLogo.length - 1
 
@@ -125,35 +141,37 @@ function scrollBarraComentario(barra){
 
 
 //scroll events and shenanigans
+
 const logo = document.getElementById('logo')
 const cuidadosBarba = document.getElementById('cuidados-barba'),
 perdaCapilar = document.getElementById('perda-capilar'),
 cortesEstilosos = document.getElementById('cortes-estilosos')
 const logoBig = document.getElementById('logo-insection')
+const header = document.querySelector("#header")
 logo.style.opacity = '0'
 
-if(window.scrollY != 0) {
-  window.scrollTo(0,0)
-}
-let maxDistance = boundingShenanigans(logoBig).bottom
+
+let maxDistance = boundingShenanigans(logoBig).bottom + window.scrollY
 
 
 window.addEventListener('scroll', () => {
   let nowDistance = boundingShenanigans(logoBig).bottom
-  logoBig.style.height = `${100  +  100 * (nowDistance / maxDistance)}px`
-  logoBig.style.width = `${100  +  100 * (nowDistance / maxDistance)}px`
+  logoBig.style.height = `${65  +  100 * (nowDistance / maxDistance)}px`
+  logoBig.style.width = `${65  +  100 * (nowDistance / maxDistance)}px`
 
   if (nowDistance - 100 < 50) {
-    logoBig.style.height = `${65 +  100 * (nowDistance / maxDistance)}px`
-    logoBig.style.width = `${65 +  100 * (nowDistance / maxDistance)}px`
+    logoBig.style.height = `${50 +  100 * (nowDistance / maxDistance)}px`
+    logoBig.style.width = `${50 +  100 * (nowDistance / maxDistance)}px`
   }
 
   if (nowDistance - 100 <= 0 ) {
     logoBig.style.opacity = '0'
     logo.style.opacity = '1'
+    if(!header.classList.contains("active")) header.classList.add("active");
   } else {
     logoBig.style.opacity = '1'
     logo.style.opacity = '0'
+    if(header.classList.contains("active")) header.classList.remove("active");
   }
 })
 
@@ -161,3 +179,10 @@ function boundingShenanigans(elemento) {
   let area = elemento.getBoundingClientRect()
   return area
 }
+
+const scrollArrowDown = document.querySelector("#arrowDown")
+const section1 = document.querySelector("#section-1")
+
+scrollArrowDown.addEventListener("click", () => {
+  section1.scrollIntoView()
+})

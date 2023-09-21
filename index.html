@@ -28,17 +28,60 @@
 
 </head>
 <body>
-  <header>
+  <header id="header">
       <ul>
-          <li><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">face</a></li>
-          <li><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Barba</a></li>
+          <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">face</a>
+            <div>
+              <a href="#">Limpeza de pele</a><a href="#">Peeling</a><a href="#">Harmonização facial</a>
+            </div>
+          </li>
+          <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Barba</a>
+            <div>
+              <a href="#">Higienica</a><a href="#">Alinhamento</a><a href="#">Tradicional</a><a href="#">Personalizada</a>
+            </div>
+          </li>
           <li id="logo"><a href="#"><img src="imagens/logo-black.png" alt="logo" ></a></li>
-          <li><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">cabelo</a></li>
-          <li><a href="#" id="cadastro">Cadastro</a></li>
+          <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">cabelo</a>
+            <div>
+              <a href="#">Corte</a><a href="#">Alizamento</a><a href="#">Pintura</a><a href="#">Preenchimento</a>
+            </div>
+          </li >
+          <li class="big-nav"><a href="#" id="cadastro">Cadastro</a></li>
+          
+          <span id="menu-mobile" class="material-symbols-sharp">menu</span>
       </ul>
-      
-      
   </header>
+  <div id="linksMobile">
+    <span class="material-symbols-sharp active" id="sairMobile">cancel</span>
+    <ul>
+      <li><a href="#" id="cadastro-mobile">Cadastro</a></li>
+      <li><a href="#">Cabelo</a>
+        <ul>
+          <li><a href="#">Corte</a></li>
+          <li><a href="#">Alizamento</a></li>
+          <li><a href="#">Pintura</a></li>
+          <li><a href="#">Preenchimento</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Face</a>
+        <ul>
+          <li><a href="#">Limpeza de pele</a></li>
+          <li><a href="#">Peeling</a></li>
+          <li><a href="#">Harmonização facial</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Barba</a>
+        <ul>
+          <li><a href="#">Alinhamento</a></li>
+          <li><a href="#">Higienica</a></li>
+          <li><a href="#">Tradicional</a></li>
+          <li><a href="#">Personalizada</a></li>
+        </ul>
+      </li>
+        
+      <li><a href="#">Home</a></li>
+    </ul>
+  </div>
   <section id="home-first">
       <div id="logo-insection-parent"><img src="imagens/logo-white.png" alt="logo-titulo" id="logo-insection"></div>
       <h1 id="logo-link">
@@ -56,7 +99,7 @@
           <small>Barbearia</small>
       </h1>
       <footer>
-          <span class="material-symbols-sharp">
+          <span class="material-symbols-sharp" id="arrowDown">
           expand_more
           </span>
       </footer>
