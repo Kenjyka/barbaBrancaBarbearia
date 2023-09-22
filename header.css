@@ -81,6 +81,10 @@ header.active #cadastro {
 #menu-mobile {
     display: none;
 }
+#linksMobile {
+    display: none;
+}
+
 
 @media (max-width:800px) {
     header {

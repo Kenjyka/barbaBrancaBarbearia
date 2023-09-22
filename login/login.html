@@ -5,11 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarbaBranca</title>
     <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+      .material-symbols-sharp {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' -25,
+        'opsz' 48
+      }
+    </style>
 </head>
 <body>
-    <form id="cadastro">
-        <label for="email-cadastro">e-mail</label>
-        <input type="email" name="email-cadastro" id="email-cadastro" placeholder="Barbabranca@ace.donut">
+    <header id="header">
+        <ul>
+            <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">face</a>
+              <div>
+                <a href="#">Limpeza de pele</a><a href="#">Peeling</a><a href="#">Harmonização facial</a>
+              </div>
+            </li>
+            <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Barba</a>
+              <div>
+                <a href="#">Higienica</a><a href="#">Alinhamento</a><a href="#">Tradicional</a><a href="#">Personalizada</a>
+              </div>
+            </li>
+            <li id="logo"><a href="../index.html"><img src="../imagens/logo-white.png" alt="logo" ></a></li>
+            <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">cabelo</a>
+              <div>
+                <a href="#">Corte</a><a href="#">Alizamento</a><a href="#">Pintura</a><a href="#">Preenchimento</a>
+              </div>
+            </li >
+            <li class="big-nav"><a href="login/login.html" id="cadastro">Cadastro</a></li>
+            
+            <span id="menu-mobile" class="material-symbols-sharp">menu</span>
+        </ul>
+    </header>
+    <div id="linksMobile">
+      <span class="material-symbols-sharp active" id="sairMobile">cancel</span>
+      <ul>
+        <li><a href="login/login.html" id="cadastro-mobile">Cadastro</a></li>
+        <li><a href="#">Cabelo</a>
+          <ul>
+            <li><a href="#">Corte</a></li>
+            <li><a href="#">Alizamento</a></li>
+            <li><a href="#">Pintura</a></li>
+            <li><a href="#">Preenchimento</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Face</a>
+          <ul>
+            <li><a href="#">Limpeza de pele</a></li>
+            <li><a href="#">Peeling</a></li>
+            <li><a href="#">Harmonização facial</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Barba</a>
+          <ul>
+            <li><a href="#">Alinhamento</a></li>
+            <li><a href="#">Higienica</a></li>
+            <li><a href="#">Tradicional</a></li>
+            <li><a href="#">Personalizada</a></li>
+          </ul>
+        </li>
+          
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </div>
+
+
+    <form id="cadastrar">
+        <div class="label-input">
+            <label for="email-cadastro">e-mail</label>
+            <input type="email" name="email-cadastro" id="email-cadastro" placeholder="Barbabranca@ace.donut">
+        </div>
         <input type="text" id="username-cadastro" placeholder="Barba Branca" maxlength="30">
         <div>
             <input type="password" name="password" id="password" maxlength="16">
@@ -18,5 +87,8 @@
         <button>Cadastrar</button>
     </form>
     <form id="login"></form>
+
+
+    <script src="../menuMobile.js"></script>
 </body>
 </html>
