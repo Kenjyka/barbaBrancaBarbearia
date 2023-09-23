@@ -129,19 +129,30 @@ header.active #cadastro {
         padding: 0;
         text-align: center;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         gap: 40px;
         margin-left: 20px;
     }
-    #linksMobile > ul > li > a {
+    #linksMobile > ul > li > span {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    #linksMobile > ul > li > span > a, #cadastro-mobile {
         font-size: 2em;
     }
     #linksMobile > ul > li {
+        position: relative;
+    }
+    #linksMobile > ul > li {
         display: flex;
+        flex-direction: column;
     }
     #linksMobile li > ul  {
         font-size: 1.2em;
-        display: flex;
+        display: none;
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
@@ -164,5 +175,20 @@ header.active #cadastro {
 
     #linksMobile.active {
         display: flex;
+    }
+    ul.active {
+        display: flex!important;
+    }
+    #linksMobile .material-symbols-sharp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    span {
+        transition: rotate .3s;
+    }
+    .rotated {
+        rotate: 180deg;
     }
 }

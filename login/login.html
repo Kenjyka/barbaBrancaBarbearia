@@ -36,7 +36,7 @@
                 <a href="#">Corte</a><a href="#">Alizamento</a><a href="#">Pintura</a><a href="#">Preenchimento</a>
               </div>
             </li >
-            <li class="big-nav"><a href="login/login.html" id="cadastro">Cadastro</a></li>
+            <li class="big-nav"><a href="cadastro.html" id="cadastro">Cadastro</a></li>
             
             <span id="menu-mobile" class="material-symbols-sharp">menu</span>
         </ul>
@@ -44,8 +44,8 @@
     <div id="linksMobile">
       <span class="material-symbols-sharp active" id="sairMobile">cancel</span>
       <ul>
-        <li><a href="login/login.html" id="cadastro-mobile">Cadastro</a></li>
-        <li><a href="#">Cabelo</a>
+        <li><a href="cadastro.html" id="cadastro-mobile">Cadastro</a></li>
+        <li><span><a href="#">Cabelo</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
           <ul>
             <li><a href="#">Corte</a></li>
             <li><a href="#">Alizamento</a></li>
@@ -53,14 +53,14 @@
             <li><a href="#">Preenchimento</a></li>
           </ul>
         </li>
-        <li><a href="#">Face</a>
+        <li><span><a href="#">Face</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
           <ul>
             <li><a href="#">Limpeza de pele</a></li>
             <li><a href="#">Peeling</a></li>
             <li><a href="#">Harmonização facial</a></li>
           </ul>
         </li>
-        <li><a href="#">Barba</a>
+        <li><span><a href="#">Barba</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
           <ul>
             <li><a href="#">Alinhamento</a></li>
             <li><a href="#">Higienica</a></li>
@@ -69,26 +69,27 @@
           </ul>
         </li>
           
-        <li><a href="../index.html">Home</a></li>
+        <li><span><a href="../index.html">Home</a></span></li>
       </ul>
     </div>
 
 
-    <form id="cadastrar">
-        <div class="label-input">
-            <label for="email-cadastro">e-mail</label>
-            <input type="email" name="email-cadastro" id="email-cadastro" placeholder="Barbabranca@ace.donut">
-        </div>
-        <input type="text" id="username-cadastro" placeholder="Barba Branca" maxlength="30">
-        <div>
-            <input type="password" name="password" id="password" maxlength="16">
-            <input type="password" name="password-confirm" id="password-confirm" maxlength="16">
-        </div>
-        <button>Cadastrar</button>
-    </form>
-    <form id="login"></form>
+    <main>
+        <form id="login">
+            <div class="label-input">
+                <label for="email-login">Email</label> 
+                <input type="text" id="email-login" placeholder="barbabranca@ace.donut" maxlength="50"required>
+            </div>
+            <div class="label-input">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" maxlength="16" required>
+            </div>
+            <button id="enviar-login">Login</button>
+            <a href="cadastro.html">Não possui uma conta? clique aqui</a>
+        </form>
+    </main>
 
-
+    <script src="login.js"></script>
     <script src="../menuMobile.js"></script>
 </body>
 </html>
