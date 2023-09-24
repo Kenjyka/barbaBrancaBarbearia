@@ -120,7 +120,22 @@ function scrollBarraComentario(barra){
   (scrollMax == barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 300;
 }
 
+const btnComentar = document.querySelectorAll(".comentar-button")
+const btnComentarSair = document.querySelectorAll(".cancel-comment")
 
+btnComentar.forEach(btn => {
+  btn.addEventListener("click", () => {
+    let alvo = btn.parentElement.querySelector(".modal-comentar")
+    alvo.classList.toggle("active")
+  })
+})
+
+btnComentarSair.forEach(btnSair => {
+  btnSair.addEventListener("click", () => {
+    let alvo = btnSair.parentElement.parentElement
+    alvo.classList.remove("active")
+  })
+})
 
 
 

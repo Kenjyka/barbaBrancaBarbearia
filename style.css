@@ -623,6 +623,55 @@ footer {
     
 }
 
+.modal-comentar {
+    background-color: #000000c0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 50px;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+
+    & > div {
+        margin-bottom: 20px;
+        font-size: 2.5em;
+
+        & > span {
+            cursor: pointer;
+        }
+    }
+
+    & > form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    & > form > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        & > input {
+            width: 80%;
+        }
+    }
+
+    & > form > div > textarea {
+        resize: none;
+        width: 80%;
+    }
+}
+.modal-comentar.active {
+    display: flex;
+}
+
 @media (min-width: 801px) {
     .carousel-inner .left-carousel {
         position: absolute;
