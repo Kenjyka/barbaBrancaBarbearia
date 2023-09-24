@@ -414,7 +414,7 @@ body {
 .contedor-background {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right top;
+    background-position: center top;
     height: 100%;
     width: 100%;
     background-attachment: fixed;
@@ -424,16 +424,31 @@ body {
     z-index: -1;
     background-color: #000;
 }
+.comentar-button {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    transition: background-color .5s, color .5s;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
 
 #cuidados-barba > .contedor-background {
     background-image: url(imagens/estilo-barba.jpg);
+}
+#calvice > .contedor-background {
+    background-image: url(imagens/pexels-rafael-barros-1819482.jpg);
 }
 #cortes-estilosos > .contedor-background {
     background-image: url(imagens/cortes-estiloso.jpg);
 }
 .secao-comentarios {
     display: flex;
-    margin: 5em 200px 0 200px;
+    margin: 2.5em 200px 0 200px;
     width: 80%;
     height: 350px;
     gap: 30px;
@@ -506,10 +521,24 @@ body {
     }
 }
 .blur {
-    filter:grayscale(1) brightness(.2);
+    filter:grayscale(1) brightness(.2) blur(2px);
     box-shadow:  inset 0 0 50px #000;
 }
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
 
+    & > span >  i {
+        font-size: 30px;
+        transition: font-size .5s;
+    }
+    & > span:hover i {
+        font-size: 40px;
+    }
+}
 
 @media (max-width:800px) {
     #logo-title {

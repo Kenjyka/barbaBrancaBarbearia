@@ -1,5 +1,3 @@
-
-
 tituloLogo = Array.from(document.querySelectorAll('.titleLetters'))
 indexTituloLogo = tituloLogo.length - 1
 
@@ -121,6 +119,8 @@ function scrollBarraComentario(barra){
   const scrollMax = barra.scrollWidth - barra.clientWidth;
   (scrollMax == barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 300;
 }
+
+
 
 
 
