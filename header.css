@@ -9,7 +9,6 @@ header {
     color: #fff;
     z-index: 3;
     transition: background-color .5s, color .5s;
-    
 }
 header.active {
     background-color: #fff!important;
@@ -83,6 +82,15 @@ header.active #cadastro {
 }
 #linksMobile {
     display: none;
+}
+.perfil-nav {
+    display: none;
+}
+.perfil-nav.active {
+    display: flex;
+}
+.inactive,.inactive {
+    display: none!important;
 }
 
 

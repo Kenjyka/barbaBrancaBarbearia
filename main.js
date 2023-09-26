@@ -81,7 +81,7 @@ setInterval(() => {
 
 
 
-// comentarios
+// aba de comentarios
 const viewportWidth = window.innerWidth
 const secoesComentarios = document.querySelectorAll('.contedor')
 let podeRodarComentarios = true
@@ -187,3 +187,18 @@ const section1 = document.querySelector("#section-1")
 scrollArrowDown.addEventListener("click", () => {
   section1.scrollIntoView()
 })
+
+
+
+//header events and shenanigans
+
+const btnCadastro = document.querySelector("#cadastro")
+const btnCadastroMobile = document.querySelector("#cadastro-mobile")
+const perfil = document.querySelectorAll(".perfil-nav")
+if(localStorage.getItem("isLoggedIn")  == "true") {
+  btnCadastro.parentElement.classList.add("inactive")
+  btnCadastroMobile.parentElement.classList.add("inactive")
+  perfil.forEach(atual => {
+    atual.classList.add("active")
+  })
+}
