@@ -49,7 +49,7 @@
         <li class="big-nav"><a href="login/cadastro.html" id="cadastro">Cadastro</a></li>
         <li class="big-nav perfil-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Perfil</a>
           <div>
-            <a href="#">Corte</a><a href="#">Alizamento</a><a href="#">Pintura</a><a href="#">Preenchimento</a>
+            <a href="#">Marcar horario</a><a href="#"></a><a href="" id="sair">Sair</a>
           </div>
         </li>
         
@@ -210,22 +210,23 @@
           <h1>Cuidados com a barba</h1>
           <span><a href="https://mmano.com.br/w/barba-bem-feita?utm_source=google&utm_medium=cpc&utm_campaign=barba&utm_content=sea-mam_barba_bemfeita&utm_term=azcfzn0100101expandld122802rx15030203010103034020113001718&gclid=CjwKCAjw3oqoBhAjEiwA_UaLtka2R_rIbHjN3tkQceKmXReTNQrlYyYofu29xctOZ1lblATqGg_2qxoCxJQQAvD_BwE" target="_blank">Leia o artigo <span class="material-symbols-sharp">arrow_forward_ios</span></a></span>
           <button class="comentar-button">Comentar</button>
-          <section class="modal-comentar">
-            <div>
-              <span class="material-symbols-sharp cancel-comment">cancel</span>
-            </div>
-            <form>
-              <div>
-                <label for="titulo-comentario">Titulo do seu comentario</label>
-                <input type="text" name="titulo-comentario" id="titulo-comentario" maxlength="50">
-              </div>
-              <div>
-                <label for="body-comentario">Comentario</label>
-                <textarea name="body-comentario" id="body-comentario" cols="30" rows="5" maxlength="300"></textarea>
-              </div>
-            </form>
-          </section>
           <div class="secao-comentarios">
+            <div class="modal-comentar comentario">
+              <div>
+                <span class="material-symbols-sharp cancel-comment">cancel</span>
+              </div>
+              <form method="POST">
+                <div>
+                  <label for="titulo-comentario">Titulo do seu comentario</label>
+                  <input type="text" name="titulo-comentario" id="titulo-comentario" maxlength="50">
+                </div>
+                <div class="textarea-comentario">
+                  <label for="body-comentario">Comentario</label>
+                  <textarea name="body-comentario" id="body-comentario" cols="30" rows="5" maxlength="300"></textarea>
+                </div>
+                <button class="modal-comentar-button">Fazer comentario</button>
+              </form>
+            </div>
             <div class="comentario">
               <h4>Corte Midia</h4>
               <p>Nossa Irmão, o proceder tava meio tortuoso meu mano, mas contudo, após ter pegado a visão do cuidado midiatico com a barba, o proceder ficou top, tá ligado? Dicas mutio midias!!!</p>

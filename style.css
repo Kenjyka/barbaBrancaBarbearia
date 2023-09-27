@@ -624,20 +624,17 @@ footer {
 }
 
 .modal-comentar {
-    background-color: #000000c0;
     display: none;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    padding: 50px;
+    position: relative;
     flex-direction: column;
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
 
     & > div {
-        margin-bottom: 20px;
-        font-size: 2.5em;
+        font-size: 1.5em;
+        position: absolute;
+        top: 10px;
+        right: 10px;
 
         & > span {
             cursor: pointer;
@@ -646,15 +643,27 @@ footer {
 
     & > form {
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
         width: 100%;
+        height: 100%;
+
+        & > div > label {
+            text-align: center;
+            font-size: .8em;
+        }
+        & > .textarea-comentario {
+            height: 100%;
+        }
+        & > button {
+            border: 0;
+            margin-top: 15px;
+            padding: 2.5px 5px;
+        }
     }
 
     & > form > div {
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
         width: 100%;
@@ -666,6 +675,7 @@ footer {
     & > form > div > textarea {
         resize: none;
         width: 80%;
+        height: 100%;
     }
 }
 .modal-comentar.active {

@@ -122,11 +122,24 @@ function scrollBarraComentario(barra){
 
 const btnComentar = document.querySelectorAll(".comentar-button")
 const btnComentarSair = document.querySelectorAll(".cancel-comment")
+const btnEnviarComentario = document.querySelector(".modal-comentar-button")
+
+btnEnviarComentario.forEach(btn => {
+  btn.addEventListener("click", () => {
+    
+  })
+})
+
 
 btnComentar.forEach(btn => {
   btn.addEventListener("click", () => {
+
+    if (!localStorage.getItem("isLoggedIn")) {
+      alert("Essa ação necessita de Login")
+    }
     let alvo = btn.parentElement.querySelector(".modal-comentar")
     alvo.classList.toggle("active")
+    l
   })
 })
 
@@ -136,6 +149,7 @@ btnComentarSair.forEach(btnSair => {
     alvo.classList.remove("active")
   })
 })
+
 
 
 
@@ -192,9 +206,17 @@ scrollArrowDown.addEventListener("click", () => {
 
 //header events and shenanigans
 
+const btnSair = document.querySelector("#sair")
 const btnCadastro = document.querySelector("#cadastro")
 const btnCadastroMobile = document.querySelector("#cadastro-mobile")
 const perfil = document.querySelectorAll(".perfil-nav")
+
+
+btnSair.addEventListener("click", () => {
+  localStorage.setItem("isLoggedIn", JSON.stringify(false))
+  localStorage.removeItem("loggedAccount")
+})
+
 if(localStorage.getItem("isLoggedIn")  == "true") {
   btnCadastro.parentElement.classList.add("inactive")
   btnCadastroMobile.parentElement.classList.add("inactive")

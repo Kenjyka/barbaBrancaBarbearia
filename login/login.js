@@ -21,7 +21,7 @@ btnEnviar.addEventListener("click", evento => {
             localStorage.setItem("isLoggedIn", true)
             localStorage.setItem("loggedAccount", JSON.stringify(logins[index]))
             window.location.href = "../index.html"
-        } else if (logins[index].senha == senha.value){
+        } else if (logins[index].senha != senha.value){
             alert("Senha incorreta")
         } else {
             alert("login não encontrado")
