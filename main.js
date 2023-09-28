@@ -43,10 +43,7 @@ promocionaisCards.forEach((element, index) => {
   })
 
 
-  elementFilho.addEventListener('mouseout', () => {
-    console.log('eita')
-    continuaCarouselCards = true;
-  })
+
   elementFilho.addEventListener('mouseenter', () => {
     console.log('ayo')
     continuaCarouselCards = false
@@ -55,6 +52,10 @@ promocionaisCards.forEach((element, index) => {
     neto.addEventListener('mouseenter', ()=> {
       continuaCarouselCards = false
     })
+  })
+  elementFilho.addEventListener('mouseout', () => {
+    console.log('eita')
+    continuaCarouselCards = true;
   })
 })
 
@@ -111,7 +112,7 @@ secoesComentarios.forEach(element => {
 
 
   setInterval(() => {
-    if (podeRodarComentarios) scrollBarraComentario(barraComentario);
+    if (podeRodarComentarios) {scrollBarraComentario(barraComentario)};
   }, 10000);
 })
 
@@ -122,11 +123,36 @@ function scrollBarraComentario(barra){
 
 const btnComentar = document.querySelectorAll(".comentar-button")
 const btnComentarSair = document.querySelectorAll(".cancel-comment")
-const btnEnviarComentario = document.querySelector(".modal-comentar-button")
+const btnEnviarComentario = document.querySelectorAll(".modal-comentar-button")
+let comentarioId
+if (!localStorage.getItem("comentarioId")) {
+  comentarioId = 0
+} else {
+  comentarioId = JSON.parse(localStorage.getItem("comenarioId"))
+}
 
 btnEnviarComentario.forEach(btn => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (evento) => {
+    evento.preventDefault()
+
+    let form = btn.parentElement
+    let titulo = form.querySelector("#titulo-comentario").value
+    let texto = form.querySelector("#body-comentario").value
+    let pessoa = JSON.parse(localStorage.getItem("loggedAccount")).nome
     
+    if (titulo == "" || texto == "") {
+      alert("os campos titulo e texto devem ser preenchidos para que o comentario seja feito!")
+    } else {
+      let comentario = document.createElement("div")
+      comentario.setAttribute("class", "comentario")
+      comentario.innerHTML = `
+      <h4>${titulo}</h4>
+      <p>${texto}</p>
+      <small>${pessoa}</small>
+      `
+
+    }
+
   })
 })
 
@@ -136,10 +162,20 @@ btnComentar.forEach(btn => {
 
     if (!localStorage.getItem("isLoggedIn")) {
       alert("Essa ação necessita de Login")
+    } else {
+      let alvo = btn.parentElement.querySelector(".modal-comentar")
+      alvo.classList.toggle("active")
+      let titulo = alvo.querySelector("#titulo-comentario")
+      let texto = alvo.querySelector("#body-comentario")
+      titulo.value = ""
+      texto.value = ""
+      if(podeRodarComentarios) {
+        podeRodarComentarios = false
+      } else {
+        podeRodarComentarios = true
+      }
+      
     }
-    let alvo = btn.parentElement.querySelector(".modal-comentar")
-    alvo.classList.toggle("active")
-    l
   })
 })
 
@@ -147,6 +183,7 @@ btnComentarSair.forEach(btnSair => {
   btnSair.addEventListener("click", () => {
     let alvo = btnSair.parentElement.parentElement
     alvo.classList.remove("active")
+    podeRodarComentarios = true
   })
 })
 

@@ -483,8 +483,12 @@ body {
     padding: 10px;
     position: relative;
     & > h4 {
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: bolder;
+        height: 60px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
     }
 
     & > p {
@@ -612,7 +616,10 @@ footer {
         }
 
         & > h4 {
-            font-size: 1.2em;
+            display: flex;
+            width: 200px;
+            font-size: 1em;
+            overflow: hidden;
         }
     }
 

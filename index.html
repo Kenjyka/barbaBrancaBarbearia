@@ -40,7 +40,7 @@
             <a href="#">Higienica</a><a href="#">Alinhamento</a><a href="#">Tradicional</a><a href="#">Personalizada</a>
           </div>
         </li>
-        <li id="logo"><a href="../index.html"><img src="../imagens/logo-black.png" alt="logo" ></a></li>
+        <li id="logo"><a href="../index.html"><img src="imagens/logo-black.png" alt="logo" ></a></li>
         <li class="big-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">cabelo</a>
           <div>
             <a href="#">Corte</a><a href="#">Alizamento</a><a href="#">Pintura</a><a href="#">Preenchimento</a>
@@ -215,14 +215,14 @@
               <div>
                 <span class="material-symbols-sharp cancel-comment">cancel</span>
               </div>
-              <form method="POST">
+              <form>
                 <div>
                   <label for="titulo-comentario">Titulo do seu comentario</label>
-                  <input type="text" name="titulo-comentario" id="titulo-comentario" maxlength="50">
+                  <input type="text" name="titulo-comentario" id="titulo-comentario" maxlength="25" required>
                 </div>
                 <div class="textarea-comentario">
                   <label for="body-comentario">Comentario</label>
-                  <textarea name="body-comentario" id="body-comentario" cols="30" rows="5" maxlength="300"></textarea>
+                  <textarea name="body-comentario" id="body-comentario" cols="30" rows="5" maxlength="300" required></textarea>
                 </div>
                 <button class="modal-comentar-button">Fazer comentario</button>
               </form>
