@@ -382,7 +382,7 @@ body {
     position: relative;
 
 
-    & > span {
+    & > header {
         font-size: 2em;
         width: 100%;
         display: flex;
@@ -391,6 +391,22 @@ body {
         color: #fff;
         position: absolute;
         top: 20px;
+        gap: 20px;
+        z-index: 1;
+        & > span {
+            color: #696969;
+            cursor: pointer;
+            font-size: .8em;
+            transition: color 1s, font-size 1s;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+        & > .active {
+            color: #fff;
+            font-size: 1em
+        }
     }
 
     & > article {
@@ -413,7 +429,8 @@ body {
     align-items: center;
     margin-top: -1px;
     padding-top: 100px;
-
+    opacity: 0;
+    z-index: -1;
     & > main {
         display: flex;
         gap: 20px;
@@ -439,6 +456,11 @@ body {
             }
         }
     }
+}
+
+.contedor.active {
+    z-index: 0;
+    opacity: 1;
 }
 .contedor h1 {
     font-size: 2em;
@@ -611,7 +633,7 @@ body {
 
     & #map {
         width: 80%;
-        height: 300px;
+        height: 500px;
     }
 }
 
@@ -780,11 +802,17 @@ body {
         position: absolute;
         top: 0;
         left: 150px;
-        width: 600px!important;
+        width: 800px!important;
+        padding-right: 200px ;
         width: fit-content;
         font-size: 1.8em;
     }
     
+    .carousel-inner .left-carousel {
+        background-image: linear-gradient(to right, #000 60%,#00000093 80%, transparent);
+        height: 100%;
+    }
+
     .left-carousel > h2,.right-carousel > h2 {
         font-size: 2em;
         margin-bottom: 80px;
@@ -797,9 +825,12 @@ body {
     .right-carousel {
         top: 0;
         right: 150px!important;
-        width: 600px!important;
-        font-size: 2em;
+        width: 800px!important;
+        padding-left: 200px;
+        font-size: 1.8em;
         left: auto!important;
+        background-image: linear-gradient(to left,  #000 60%,#00000093 80%, transparent);
+        height: 100%;
     }
     
 }
