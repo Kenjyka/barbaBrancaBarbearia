@@ -115,7 +115,7 @@ secoesComentarios.forEach(element => {
 
 function scrollBarraComentario(barra){
   const scrollMax = barra.scrollWidth - barra.clientWidth;
-  (-scrollMax + 1 >= barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft -= 300;
+  (-scrollMax + 1 >= barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft -= 220;
 }
 
 const btnComentar = document.querySelectorAll(".comentar-button")

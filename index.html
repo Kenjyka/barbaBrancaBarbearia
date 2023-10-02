@@ -204,9 +204,10 @@
 
 
       <section id="section-2">
-        <article class="contedor" id="cuidados-barba">
+        <span>Cuidados com a barba</span>
+        <article class="contedor active" id="cuidados-barba">
           <div class="contedor-background blur"></div>
-          <h1>Cuidados com a barba</h1>
+          
           <button class="comentar-button">Comentar</button>
           <main>
             <aside>
@@ -344,11 +345,59 @@
         </article> -->
       </section>
   </main>
-  <footer>
-    <span><i class="bi bi-instagram"></i></span>
-    <span><i class="bi bi-facebook"></i></span>
-    <span><i class="bi bi-twitter"></i></span>
-    <span><i class="bi bi-whatsapp"></i></span>
+  <footer id="footer">
+    <section>
+      <span><i class="bi bi-instagram"></i></span>
+      <span><i class="bi bi-facebook"></i></span>
+      <span><i class="bi bi-twitter"></i></span>
+      <span><i class="bi bi-whatsapp"></i></span>
+    </section>
+    <section id="map-section">
+      <h1>Nos encontre no Maps</h1>
+      <div id="map" >
+      </div>
+
+      <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyD2YnCF28eacNxyDEqNJO1qNIogCxxMKMI",
+          v: 'weekly',
+          // Add other bootstrap parameters as needed, using camel case.
+          // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+        });
+      </script>
+      <script>
+        let map;
+
+        async function initMap() {
+          // The location of Uluru
+          const position = { lat: -15.820550384318858, lng: -48.06967316085039 };
+          // Request needed libraries.
+          //@ts-ignore
+          const { Map } = await google.maps.importLibrary("maps");
+          const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+
+          // The map, centered at Uluru
+          map = new Map(document.getElementById("map"), {
+            zoom: 17,
+            center: position,
+            mapId: "main-Map",
+            zoomControl: false,
+            mapTypeControl: false,
+            gestureHandling: "cooperative",
+            mapId:"2a1a44730452c546"
+          });
+
+          // The marker, positioned at Uluru
+          const marker = new AdvancedMarkerView({
+            map: map,
+            position: position,
+            title: "Barbearia Barba branca",
+          });
+        }
+
+        initMap();
+      </script>
+    </section>
   </footer>
 
 

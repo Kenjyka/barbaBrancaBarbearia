@@ -378,24 +378,48 @@ body {
     background-image: url(imagens/bartender.jpg);
 }
 
+#section-2 {
+    position: relative;
+
+
+    & > span {
+        font-size: 2em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+    }
+
+    & > article {
+        display: none;
+    }
+
+    & > article.active {
+        display: flex;
+    }
+}
+
 .contedor {
     height: 90vh;
     width: 100vw;
     position: relative;
-    display: flex;
     color: var(--primaria);
     box-sizing: border-box;
     padding: 40px 0;
     flex-direction: column;
     align-items: center;
     margin-top: -1px;
+    padding-top: 100px;
 
     & > main {
         display: flex;
         gap: 20px;
         justify-content: space-around;
         width: 100%;
-
+        height: 100%;
         & > aside {
             width: 25%;
             display: flex;
@@ -432,9 +456,6 @@ body {
     text-decoration: none;
     color: inherit;
     display: flex;
-}
-.contedor > span {
-    
 }
 .contedor-background {
     background-repeat: no-repeat;
@@ -557,19 +578,40 @@ body {
     filter:grayscale(1) brightness(.2) blur(2px);
     box-shadow:  inset 0 0 50px #000;
 }
-footer {
+#footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    gap: 40px;
+    background-color: #212121;
+    & > section {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        gap: 40px;
+        width: 100vw;
+    }
 
-    & > span >  i {
+    & > #map-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    & span >  i {
         font-size: 30px;
         transition: font-size .5s;
+        color: #616161;
+        transition: color .5s;
     }
-    & > span:hover i {
-        font-size: 40px;
+    & span:hover i {
+        color: #fff;
+    }
+
+    & #map {
+        width: 80%;
+        height: 300px;
     }
 }
 
@@ -634,7 +676,22 @@ footer {
         height: auto;
         max-height: fit-content;
     }
-
+    
+    .contedor {
+        & main {
+            gap: 10px;
+        }
+        & aside {
+            height: 100%;
+            font-size: .8em!important;
+            width: 180px!important;
+            padding:5px!important;
+            
+            & > p {
+                margin-top: 50px;
+            }
+        }
+    }
 
     .comentario {
         height: 250px!important;
@@ -644,7 +701,7 @@ footer {
             font-size: .8em;
         }
 
-        & > h4 {
+        & > span.titulo {
             display: flex;
             width: 200px;
             font-size: 1em;
