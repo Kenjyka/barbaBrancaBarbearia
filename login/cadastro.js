@@ -42,7 +42,7 @@ btnCadastro.addEventListener("click", (evento) => {
                     senha: senhaCadastro.value,
                     dataDeNascimento: dataNascimento.value,
                     endereco: `${logradouro.value} numero ${numeroCasa.value}`,
-                    comentarios:''
+                    comentarios: []
                 }
             logins[logins.length] = login
             localStorage.setItem("logins", JSON.stringify(logins))

@@ -90,11 +90,13 @@ if (!localStorage.getItem("section-1")) {
   localStorage.setItem("comentarioID", JSON.stringify(10))
 }
 let comentarioId
-  if (!localStorage.getItem("comentarioId")) {
-    comentarioId = 1
+  if (localStorage.getItem("comentarioID")) {
+    comentarioId = JSON.parse(localStorage.getItem("comentarioID"))
   } else {
-    comentarioId = JSON.parse(localStorage.getItem("comentarioId"))
+    comentarioId = 1
+    console.log('opa')
   }
+  console.log(comentarioId)
 if (!localStorage.getItem("comentarios")) {
   
   localStorage.setItem("comentarios", JSON.stringify([
@@ -191,7 +193,7 @@ secoesComentarios.forEach(element => {
 
   function scrollBarraComentario(barra){
     const scrollMax = barra.scrollWidth - barra.clientWidth;
-    (scrollMax == barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 220;
+    (scrollMax <= barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 220;
   }
 
   const btnComentar = document.querySelectorAll(".comentar-button")
@@ -230,7 +232,7 @@ secoesComentarios.forEach(element => {
         const index = procuralogin.findIndex(objeto => {
           return objeto.email == loginAtual.email
         })
-        procuralogin[index].comentario = procuralogin[index].comentario + comentarioId
+        procuralogin[index].comentarios.push(comentarioId)
         localStorage.setItem("logins", JSON.stringify(procuralogin))
         loginAtual = procuralogin[index]
         localStorage.setItem("loggedAccount", JSON.stringify(loginAtual))
@@ -238,18 +240,22 @@ secoesComentarios.forEach(element => {
 
         if (form.parentElement.parentElement.parentElement.parentElement.id == "cuidados-barba") {
           let comentariosSection = JSON.parse(localStorage.getItem("section-1"))
-          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
+          comentariosSection.comentarios.push(comentarioId)
           localStorage.setItem("section-1", JSON.stringify(comentariosSection))
         } else if (form.parentElement.parentElement.parentElement.parentElement.id == "calvice") {
           let comentariosSection = JSON.parse(localStorage.getItem("section-2"))
-          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
+          comentariosSection.comentarios.push(comentarioId)
           localStorage.setItem("section-2", JSON.stringify(comentariosSection))
         } else if (form.parentElement.parentElement.parentElement.parentElement.id == "cortes-estilosos") {
-          let comentariosSection = JSON.parse(localStorage.getItem("section-2"))
-          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
-          localStorage.setItem("section-2", JSON.stringify(comentariosSection))
+          let comentariosSection = JSON.parse(localStorage.getItem("section-3"))
+          comentariosSection.comentarios.push(comentarioId)
+          localStorage.setItem("section-3", JSON.stringify(comentariosSection))
         }
+        btn.parentElement.parentElement.classList.remove("active")
+        btn.parentElement.parentElement.parentElement.scrollLeft += 99999
+
         comentarioId++
+        localStorage.setItem("cometarioID", JSON.stringify(comentarioId))
       }
 
     })
