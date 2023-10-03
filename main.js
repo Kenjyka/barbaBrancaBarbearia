@@ -78,15 +78,82 @@ setInterval(() => {
 
 // aba de comentarios
 if (!localStorage.getItem("section-1")) {
-  localStorage.setItem("section-1", {
-    comentarios: '1,2,3'
-  })
-  localStorage.setItem("section-2", {
-    comentarios: '4,5,6'
-  })
-  localStorage.setItem("section-3", {
-    comentarios: '7,8,9'
-  })
+  localStorage.setItem("section-1", JSON.stringify({
+    comentarios: [1,2,3]
+  }))
+  localStorage.setItem("section-2", JSON.stringify({
+    comentarios: [4,5,6]
+  }))
+  localStorage.setItem("section-3", JSON.stringify({
+    comentarios: [7,8,9]
+  }))
+  localStorage.setItem("comentarioID", JSON.stringify(10))
+}
+let comentarioId
+  if (!localStorage.getItem("comentarioId")) {
+    comentarioId = 1
+  } else {
+    comentarioId = JSON.parse(localStorage.getItem("comentarioId"))
+  }
+if (!localStorage.getItem("comentarios")) {
+  
+  localStorage.setItem("comentarios", JSON.stringify([
+    {
+    id: 1,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 2,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id:3,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 4,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id:5,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 6,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 7,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 8,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  },
+  {
+    id: 9,
+    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
+    <small>pessoa</small>`
+  }
+
+]))
 }
 
 
@@ -94,35 +161,53 @@ const viewportWidth = window.innerWidth
 const secoesComentarios = document.querySelectorAll('.contedor')
 let podeRodarComentarios = true
 
+function rederizaComentario (alvo, id) {
+  console.log(alvo, [...id])
+  id.forEach(elemento => {
+    let comentarios = JSON.parse(localStorage.getItem("comentarios"))
+    const index = comentarios.findIndex( procura => {
+      return procura.id == elemento
+    })
+    console.log(index)
+    let comentario = document.createElement("div")
+    comentario.setAttribute("class", "comentario") 
+    comentario.innerHTML = comentarios[index].comentario
+    alvo.appendChild(comentario)
+  })
+}
+
 
 secoesComentarios.forEach(element => {
   console.log(element);
   let barraComentario = element.querySelector('.secao-comentarios')
-
+  if (barraComentario.parentElement.parentElement.id == "cuidados-barba") {
+    rederizaComentario(barraComentario, JSON.parse(localStorage.getItem("section-1")).comentarios)
+  } else if (barraComentario.parentElement.parentElement.id == "calvice") {
+    rederizaComentario(barraComentario, JSON.parse(localStorage.getItem("section-2")).comentarios) 
+  } else if (barraComentario.parentElement.parentElement.id == "cortes-estilosos") {
+    rederizaComentario(barraComentario, JSON.parse(localStorage.getItem("section-3")).comentarios) 
+  }
 
 
   function scrollBarraComentario(barra){
     const scrollMax = barra.scrollWidth - barra.clientWidth;
-    (-scrollMax + 1 >= barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft -= 220;
+    (scrollMax == barra.scrollLeft) ? barra.scrollLeft = 0 : barra.scrollLeft += 220;
   }
 
   const btnComentar = document.querySelectorAll(".comentar-button")
   const btnComentarSair = document.querySelectorAll(".cancel-comment")
   const btnEnviarComentario = document.querySelectorAll(".modal-comentar-button")
-  let comentarioId
-  if (!localStorage.getItem("comentarioId")) {
-    comentarioId = 1
-  } else {
-    comentarioId = JSON.parse(localStorage.getItem("comentarioId"))
-  }
+  
 
   btnEnviarComentario.forEach(btn => {
     btn.addEventListener("click", (evento) => {
       evento.preventDefault()
-
+      evento.stopImmediatePropagation()
+      
       let form = btn.parentElement
-      let titulo = form.querySelector("#titulo-comentario").value
-      let texto = form.querySelector("#body-comentario").value
+      console.log(form.parentElement.parentElement.parentElement.parentElement)
+      let titulo = form.querySelector("input").value
+      let texto = form.querySelector("textarea").value
       let pessoa = JSON.parse(localStorage.getItem("loggedAccount")).nome
       
       if (titulo == "" || texto == "") {
@@ -133,14 +218,37 @@ secoesComentarios.forEach(element => {
         comentario.innerHTML = `<h4>${titulo}</h4><p>${texto}</p><small>${pessoa}</small>`
         let arquivadosComentario = []
         if (localStorage.getItem("comentarios")) {
-          arquivadosComentario = JSON.parse(localStorage.getItem("comentarios"))
+          arquivadosComentario = [...JSON.parse(localStorage.getItem("comentarios"))]
         }
         arquivadosComentario[arquivadosComentario.length] = {
           id: comentarioId,
           comentario: comentario.innerHTML
         }
         localStorage.setItem("comentarios", JSON.stringify(arquivadosComentario))
+        let procuralogin = JSON.parse(localStorage.getItem("logins"))
+        let loginAtual = JSON.parse(localStorage.getItem("loggedAccount"))
+        const index = procuralogin.findIndex(objeto => {
+          return objeto.email == loginAtual.email
+        })
+        procuralogin[index].comentario = procuralogin[index].comentario + comentarioId
+        localStorage.setItem("logins", JSON.stringify(procuralogin))
+        loginAtual = procuralogin[index]
+        localStorage.setItem("loggedAccount", JSON.stringify(loginAtual))
         form.parentElement.parentElement.appendChild(comentario)
+
+        if (form.parentElement.parentElement.parentElement.parentElement.id == "cuidados-barba") {
+          let comentariosSection = JSON.parse(localStorage.getItem("section-1"))
+          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
+          localStorage.setItem("section-1", JSON.stringify(comentariosSection))
+        } else if (form.parentElement.parentElement.parentElement.parentElement.id == "calvice") {
+          let comentariosSection = JSON.parse(localStorage.getItem("section-2"))
+          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
+          localStorage.setItem("section-2", JSON.stringify(comentariosSection))
+        } else if (form.parentElement.parentElement.parentElement.parentElement.id == "cortes-estilosos") {
+          let comentariosSection = JSON.parse(localStorage.getItem("section-2"))
+          comentariosSection.comentarios = comentariosSection.comentarios + comentarioId
+          localStorage.setItem("section-2", JSON.stringify(comentariosSection))
+        }
         comentarioId++
       }
 
@@ -153,6 +261,7 @@ secoesComentarios.forEach(element => {
   btnComentar.forEach(btn => {
     comentariosSection[comentariosSection.length] = btn.parentElement.querySelector(".modal-comentar")
     btn.addEventListener("click", (evento) => {
+      evento.stopImmediatePropagation()
       barraComentario = btn.parentElement.querySelector(".secao-comentarios")
       if (!localStorage.getItem("isLoggedIn")) {
         alert("Essa ação necessita de Login")
@@ -160,11 +269,11 @@ secoesComentarios.forEach(element => {
         let alvo = btn.parentElement.querySelector(".modal-comentar")
         console.log(alvo)
         alvo.classList.toggle("active")
-        let titulo = alvo.querySelector("#titulo-comentario")
-        let texto = alvo.querySelector("#body-comentario")
+        let titulo = alvo.querySelector("input")
+        let texto = alvo.querySelector("textarea")
         titulo.value = ""
         texto.value = ""
-        barraComentario.scrollLeft -= 99999999 ;
+        barraComentario.scrollLeft -= 999999 ;
     }
   })
 })

@@ -527,7 +527,7 @@ body {
     scrollbar-width: none;  /* Firefox */
     scroll-behavior: smooth;
     z-index: 2;
-    flex-direction: row-reverse;
+    flex-direction: row;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -809,7 +809,7 @@ body {
     }
     
     .carousel-inner .left-carousel {
-        background-image: linear-gradient(to right, #000 60%,#00000093 80%, transparent);
+        background-image: linear-gradient(to right, #000 60%,#000000eb,#000000ad, transparent);
         height: 100%;
     }
 
@@ -829,7 +829,7 @@ body {
         padding-left: 200px;
         font-size: 1.8em;
         left: auto!important;
-        background-image: linear-gradient(to left,  #000 60%,#00000093 80%, transparent);
+        background-image: linear-gradient(to left, #000 60%,#000000eb,#000000ad, transparent);
         height: 100%;
     }
     
