@@ -404,8 +404,13 @@ body {
             }
         }
         & > .active {
-            color: #fff;
+            color: #FEE976;
             font-size: 1em
+            
+        }
+
+        & > .active:hover {
+            color: #ffdd78;
         }
     }
 
