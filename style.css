@@ -248,6 +248,7 @@ body {
 }
 #logo-insection {
     height: 200px;
+    width: 220px;
     transition: height .05s;
 }
 #logo-insection-parent {

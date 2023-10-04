@@ -217,7 +217,8 @@ secoesComentarios.forEach(element => {
       } else {
         let comentario = document.createElement("div")
         comentario.setAttribute("class", "comentario")
-        comentario.innerHTML = `<h4>${titulo}</h4><p>${texto}</p><small>${pessoa}</small>`
+        comentario.innerHTML = `"<span class="titulo">${titulo}</span><p>${texto}</p><small>${pessoa}</small>"`
+        
         let arquivadosComentario = []
         if (localStorage.getItem("comentarios")) {
           arquivadosComentario = [...JSON.parse(localStorage.getItem("comentarios"))]
