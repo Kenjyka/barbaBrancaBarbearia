@@ -383,7 +383,6 @@ body {
 
 
     & > header {
-        font-size: 2em;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -398,6 +397,7 @@ body {
             cursor: pointer;
             font-size: .8em;
             transition: color 1s, font-size 1s;
+            font-size: 1.5em;
 
             &:hover {
                 color: #fff;
@@ -405,7 +405,7 @@ body {
         }
         & > .active {
             color: #FEE976;
-            font-size: 1em
+            font-size: 2em
             
         }
 
@@ -739,11 +739,33 @@ body {
     .secao-comentarios {
         height: 300px;
     }
-    
+    #section-2 > header {
+
+        & > span {
+            font-size: .8em!important;
+            text-align: center;
+        }   
+        
+
+        & > .active:hover {
+            color: #ffdd78;
+        }
+    }
+    #section-2 > header > span.active {
+        font-size: 1.3em!important;
+    }
+
+    & > article {
+        display: none;
+    }
+
+    & > article.active {
+        display: flex;
+    }
     
 }
 
-.modal-comentar {
+    .modal-comentar {
     display: none;
     justify-content: center;
     align-items: center;
@@ -797,6 +819,9 @@ body {
         width: 80%;
         height: 100%;
     }
+
+
+    
 }
 .modal-comentar.active {
     display: flex;

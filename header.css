@@ -9,6 +9,7 @@ header {
     color: #fff;
     z-index: 3;
     transition: background-color .5s, color .5s;
+    overflow: visible;
 }
 header.active {
     background-color: #fff!important;
@@ -83,11 +84,8 @@ header.active #cadastro {
 #linksMobile {
     display: none;
 }
-.perfil-nav {
-    display: none;
-}
-.perfil-nav.active {
-    display: flex;
+#links-mobile .perfil-nav.active {
+    display: flex!important;
 }
 .inactive,.inactive {
     display: none!important;
@@ -199,7 +197,7 @@ header.active #cadastro {
     .rotated {
         rotate: 180deg;
     }
-    .perfil-nav {
+    .big-nav.perfil-nav {
         display: none!important;
     }
 }

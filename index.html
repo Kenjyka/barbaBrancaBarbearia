@@ -6,7 +6,7 @@
   <meta name="description" content="Aqui seu corte é o mais importante, uma barbearia diversa e especializiada em satisfazer seu client">
   <title>BarbaBranca</title>
   <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -24,6 +24,7 @@
         'opsz' 48
       }
   </style>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -48,7 +49,7 @@
         <li class="big-nav"><a href="login/cadastro.html" id="cadastro">Cadastro</a></li>
         <li class="big-nav perfil-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Perfil</a>
           <div>
-            <a href="#">Marcar horario</a><a href="#"></a><a href="" id="sair">Sair</a>
+            <a href="addons/consulta.html">Marcar horario</a><a href="#"></a><a href="" id="sair">Sair</a>
           </div>
         </li>
         
@@ -59,6 +60,12 @@
     <span class="material-symbols-sharp active" id="sairMobile">cancel</span>
     <ul>
       <li><a href="login/cadastro.html" id="cadastro-mobile">Cadastro</a></li>
+      <li class="perfil-nav"><span><a href="#">perfil</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
+        <ul>
+          <li><a href="#">Marcar Horario</a></li>
+          <li><a href="" id="sairMb">sair</a></li>
+        </ul>
+      </li>
       <li><span><a href="#">Cabelo</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
         <ul>
           <li><a href="#">Corte</a></li>
@@ -367,5 +374,6 @@
 
   <script src="main.js"></script>
   <script src="menuMobile.js"></script>
+  <script src="header.js"></script>
 </body>
 </html>
