@@ -10,6 +10,7 @@ body {
     background-color: #000;
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
 
 main {
@@ -37,16 +38,18 @@ main > h2 {
 }
 
 #horarios-section {
-    padding-top: 50px;
+    opacity: 0;
+    position: absolute;
     overflow-x: scroll;
-    scrollbar-width: none;
     display: flex;
-    gap: 10px;
-    width: 100%;
-    flex-wrap: nowrap;
-    padding: 20px;
-    justify-content: center;
+    height:auto;
+    max-height: 500px;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
     box-sizing: border-box;
+    flex-direction: column;
+    gap: 20px;
     
 
     &::-webkit-scrollbar {
@@ -54,42 +57,42 @@ main > h2 {
     }
 
 
-    &  .front {
-        width: 150px;
-        display: flex;
-        flex-direction: column;
-        padding: 5px;
-        height: 200px;
-        border: 2px #fff solid;
-        box-sizing: border-box;
-        background-color: #fff;
-        color: #000;
-
-        & > .dia {
-            font-size: 1.2em;
-        }
-
-        & > .hora {
-            color: #303030;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        & > .servico {
-            font-size: 1.5em;
-            text-align: center;
-        }
-
-        & > .barbeiro {
-            margin-top: 40px;
-            width: 100%;
-            text-align: right;
-            color: #303030;
-        }
-    }
+   
 }
 
+ .front {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    height: 200px;
+    border: 2px #fff solid;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #000;
 
+    & > .dia {
+        font-size: 1.2em;
+    }
+
+    & > .hora {
+        color: #303030;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    & > .servico {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    & > .barbeiro {
+        margin-top: 40px;
+        width: 100%;
+        text-align: right;
+        color: #303030;
+    }
+}
 
 
 .cardholder {
