@@ -3,8 +3,133 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    color: #fff;
+    padding-top: 100px;
+}
+    
+main > span {
+    font-size: 1.5em;
+    color: #ccc;
+    padding-left: 15px;
+    
+}
+
+main > h1 {
+    font-size: 2em;
+    padding-left: 15px;
+}
+
+main > h2 {
+    margin-top: 25px;
+    padding-left: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#horarios-section {
+    padding-top: 50px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+    
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    &  .front {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        height: 200px;
+        border: 2px #fff solid;
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #000;
+
+        & > .dia {
+            font-size: 1.2em;
+        }
+
+        & > .hora {
+            color: #303030;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        & > .servico {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        & > .barbeiro {
+            margin-top: 40px;
+            width: 100%;
+            text-align: right;
+            color: #303030;
+        }
+    }
+}
+
+
+
+
+.cardholder {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+    height: 200px;
+}
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    color: #000;
+}
+
+.completed {
+    filter: brightness(.5);
 }

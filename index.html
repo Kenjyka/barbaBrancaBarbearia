@@ -24,6 +24,8 @@
         'opsz' 48
       }
   </style>
+
+
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -347,7 +349,7 @@
           const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
           // The map, centered at Uluru
-          map = new Map(document.getElementById("map"), {
+          map = new google.maps.Map(document.getElementById("map"), {
             zoom: 17,
             center: position,
             mapId: "main-Map",
