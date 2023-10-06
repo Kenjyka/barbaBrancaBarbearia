@@ -91,8 +91,8 @@ header.active #cadastro {
 .inactive,.inactive {
     display: none!important;
 }
-.perfil-nav {
-    display: none!important;
+#linksmobile > .perfil-nav {
+    display: none;
 }
 
 
@@ -201,7 +201,7 @@ header.active #cadastro {
     .rotated {
         rotate: 180deg;
     }
-    .perfil-nav {
+    .big-nav.perfil-nav {
         display: none!important;
     }
 }

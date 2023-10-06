@@ -14,9 +14,12 @@ btnEnviar.addEventListener("click", evento => {
         alert("Ainda há campos a serem preenchidos")
     }
     else {
+        console.log(username)
         const index = logins.findIndex( object => {
+            console.log(object.email, username.value)
             return object.email == username.value
         })
+        console.log(index)
         if (logins[index].senha == senha.value && index != -1) {
             localStorage.setItem("isLoggedIn", true)
             localStorage.setItem("loggedAccount", JSON.stringify(logins[index]))
