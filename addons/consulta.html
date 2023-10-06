@@ -50,7 +50,7 @@
   <div id="linksMobile">
     <span class="material-symbols-sharp active" id="sairMobile">cancel</span>
     <ul>
-      <li><a href="login/cadastro.html" id="cadastro-mobile">Cadastro</a></li>
+      <li><a href="../login/cadastro.html" id="cadastro-mobile">Cadastro</a></li>
       <li class="perfil-nav"><span><a href="#">Perfil</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
         <ul>
           <li><a href="#">Marcar Horario</a></li>
@@ -89,83 +89,62 @@
     <span>Olá ,</span>
     <h1>Pessoa</h1>
 
-    <h2>Horas Marcadas</h2>
+    
+    <section id="marcador-horario">
+      <h2>Marcar horario</h2>
+
+      <label for="tipo">Tipo de serviço</label>
+      <select name="tipo" id="tipo">
+        <option value="barba">Barba</option>
+        <option value="cabelo">Cabelo</option>
+        <option value="face">Face</option>
+        <option value="barba+cabelo">Barba + Cabelo</option>
+        <option value="completa">Completa</option>
+      </select>
+      <label for="servico">Serviço</label>
+      <select name="servico" id="servico" >
+        <option value="null"></option>
+        <optgroup id="barbagp">
+          <option value="alinhamento">Alinhamento</option>
+          <option value="higienica">Higiênica</option>
+          <option value="tradicional">Tradicional</option>
+          <option value="personalizada">Personalizada</option>
+        </optgroup>
+        <optgroup id="cabelogp">
+          <option value="corte">Corte</option>
+          <option value="alizamento">Alizamento</option>
+          <option value="pintura">Pintura</option>
+          <option value="preenchimento">Preenchimento</option>
+        </optgroup>
+        <optgroup id="facegp">
+          <option value="corte">Limpeza</option>
+          <option value="alizamento">Peeling</option>
+          <option value="pintura">Harmonização</option>
+        </optgroup>
+      </select>
+      <label for="dia">Escolha um dia</label>
+      <input type="date" name="dia" id="dia">
+      <span>
+        <span id="horas">
+          00
+          <ul>
+            <li>09</li>
+            <li>10</li>
+            <li>11</li>
+          </ul>
+        </span>
+        :
+        <span id="minutos">
+          00
+          <ul>
+            <li>00</li>
+            <li>10</li>
+            <li>20</li>
+          </ul>
+        </span>
+      </span>
+    </section>
     <section id="horarios-section">
-
-
-      <div class="cardholder">
-        <div class="card">
-          <div class="front">
-            <span class="dia">23 de Agosto</span>
-            <span class="hora">18:30</span>
-            <span class="servico"> Corte Moderno</span>
-            <span class="barbeiro">Marco</span>
-          </div>
-          <div class="back">
-            <span>Descrição</span>
-            <p>Um corte estiloso com degradê, risco com máquina 1</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cardholder">
-        <div class="card">
-          <div class="front">
-            <span class="dia">23 de Agosto</span>
-            <span class="hora">18:30</span>
-            <span class="servico"> Corte Moderno</span>
-            <span class="barbeiro">Marco</span>
-          </div>
-          <div class="back">
-            <span>Descrição</span>
-            <p>Um corte estiloso com degradê, risco com máquina 1</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cardholder completed">
-        <div class="card">
-          <div class="front">
-            <span class="dia">23 de Agosto</span>
-            <span class="hora">18:30</span>
-            <span class="servico"> Corte Moderno</span>
-            <span class="barbeiro">Marco</span>
-          </div>
-          <div class="back">
-            <span>Descrição</span>
-            <p>Um corte estiloso com degradê, risco com máquina 1</p>
-          </div>
-        </div>
-      </div>
-      <div class="cardholder completed">
-        <div class="card">
-          <div class="front">
-            <span class="dia">23 de Agosto</span>
-            <span class="hora">18:30</span>
-            <span class="servico"> Corte Moderno</span>
-            <span class="barbeiro">Marco</span>
-          </div>
-          <div class="back">
-            <span>Descrição</span>
-            <p>Um corte estiloso com degradê, risco com máquina 1</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="cardholder">
-        <div class="card">
-          <div class="front">
-            <span class="dia">23 de Agosto</span>
-            <span class="hora">18:30</span>
-            <span class="servico"> Corte Moderno</span>
-            <span class="barbeiro">Marco</span>
-          </div>
-          <div class="back">
-            <span>Descrição</span>
-            <p>Um corte estiloso com degradê, risco com máquina 1</p>
-          </div>
-        </div>
-      </div>
 
     </section>
   </main>
