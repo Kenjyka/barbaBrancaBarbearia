@@ -92,6 +92,12 @@ header.active #cadastro {
 #linksmobile > .perfil-nav {
     display: none;
 }
+.big-nav.perfil-nav {
+    display: none;
+}
+.big-nav.perfil-nav.active {
+    display: flex;
+}
 
 @media (max-width:800px) {
     header {

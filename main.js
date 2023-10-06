@@ -256,7 +256,7 @@ secoesComentarios.forEach(element => {
         btn.parentElement.parentElement.parentElement.scrollLeft += 99999
 
         comentarioId++
-        localStorage.setItem("cometarioID", JSON.stringify(comentarioId))
+        localStorage.setItem("comentarioID", JSON.stringify(comentarioId))
       }
 
     })
