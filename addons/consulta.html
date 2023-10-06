@@ -90,20 +90,21 @@
     <h1>Pessoa</h1>
 
     
-    <section id="marcador-horario">
+    <form id="marcador-horario">
       <h2>Marcar horario</h2>
 
-      <label for="tipo">Tipo de serviço</label>
+      <label for="tipo" >Tipo de serviço</label>
       <select name="tipo" id="tipo">
+        <option value=""></option>
         <option value="barba">Barba</option>
         <option value="cabelo">Cabelo</option>
         <option value="face">Face</option>
         <option value="barba+cabelo">Barba + Cabelo</option>
         <option value="completa">Completa</option>
       </select>
-      <label for="servico">Serviço</label>
+      <label for="servico" id="tipoLabel">Serviço</label>
       <select name="servico" id="servico" >
-        <option value="null"></option>
+        <option value=""></option>
         <optgroup id="barbagp">
           <option value="alinhamento">Alinhamento</option>
           <option value="higienica">Higiênica</option>
@@ -125,6 +126,7 @@
       <label for="dia">Escolha um dia</label>
       <input type="date" name="dia" id="dia">
       <select name="horas" id="horas">
+        <option value=""></option>
         <optgroup label="manhã">
           <option value="8">08:00</option>
           <option value="9">09:00</option>
@@ -139,7 +141,9 @@
           <option value="18">18:00</option>
         </optgroup>
       </select>
-    </section>
+      <button id="btnMarca">Marcar Horario</button>
+
+    </form>
     <section id="horarios-section">
 
     </section>
