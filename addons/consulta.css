@@ -30,109 +30,68 @@ main > h1 {
     padding-left: 15px;
 }
 
-main > h2 {
-    margin-top: 25px;
-    padding-left: 15px;
+section h2 {
+    margin-top: 20px;
+    padding: 20px 0 0 0;
     width: 100%;
     text-align: center;
+    border-top: 1px #ccc solid;
 }
 
-#horarios-section {
-    opacity: 0;
-    position: absolute;
-    overflow-x: scroll;
-    display: flex;
-    height:auto;
-    max-height: 500px;
-    width: 100vw;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    box-sizing: border-box;
-    flex-direction: column;
-    gap: 20px;
-    
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-
-   
+.none {
+    display: none;
 }
 
- .front {
-    width: 150px;
+#marcador-horario {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    height: 200px;
-    border: 2px #fff solid;
-    box-sizing: border-box;
-    background-color: #fff;
-    color: #000;
-
-    & > .dia {
-        font-size: 1.2em;
-    }
-
-    & > .hora {
-        color: #303030;
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-
-    & > .servico {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    & > .barbeiro {
-        margin-top: 40px;
-        width: 100%;
-        text-align: right;
-        color: #303030;
-    }
-}
-
-
-.cardholder {
-    flex: 0 0 auto;
-    position: relative;
-    overflow: hidden;
-    width: 150px;
-    height: 200px;
-}
-.card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease;
-}
-.card:hover {
-    transform: rotateY(180deg);
-}
-.front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color: #fff;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    box-sizing: border-box;
+    justify-content: center;
     align-items: center;
-    color: #000;
+    gap: 5px;
+
+    & > select {
+        width: 200px;
+        text-align: center;
+        font-size: 1em;
+        padding: 2px;
+        box-sizing: border-box;
+        background-color: transparent;
+        color: #fff;
+
+        & option {
+            background-color: #000;
+            text-align: center;
+            width: 100%;
+        }
+
+        & > optgroup {
+            background-color: #1b1b1b;
+            text-align: center;
+        }
+
+    }
+
+
+    & > input {
+        width: 200px;
+        text-align: center;
+        font-size: 1.2em;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #ccc;
+    }
+    & > label {
+        margin-top: 20px;
+    }
+    & > span {
+        margin-top: 15px;
+        font-size: 1.5em;
+        cursor: pointer;
+
+        & ul {
+            display: none;
+        }
+    }
 }
 
-.completed {
-    filter: brightness(.5);
-}
+
