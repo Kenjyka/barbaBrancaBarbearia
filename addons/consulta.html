@@ -40,7 +40,7 @@
         <li class="big-nav"><a href="login/cadastro.html" id="cadastro">Cadastro</a></li>
         <li class="big-nav perfil-nav"><span class="material-symbols-sharp">arrow_drop_down</span><a href="#">Perfil</a>
           <div>
-            <a href="#">Marcar horario</a><a href="#"></a><a href="" id="sair">Sair</a>
+            <a href="#">Marcar horario</a><a href="../index.html" id="sair">Sair</a>
           </div>
         </li>
         
@@ -54,7 +54,7 @@
       <li class="perfil-nav"><span><a href="#">Perfil</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
         <ul>
           <li><a href="#">Marcar Horario</a></li>
-          <li><a href="" id="sairMb">sair</a></li>
+          <li><a href="../index.html" id="sairMb">sair</a></li>
         </ul>
       </li>
       <li><span><a href="#">Cabelo</a><span class="material-symbols-sharp">arrow_drop_down</span></span>
@@ -85,68 +85,106 @@
     </ul>
   </div>
 
+  <section id="modal">
+    <div>
+      <h1>Você tem certeza?</h1>
+      <span>Essa ação removerá o horário marcado</span>
+      <div>
+        <button id="prosseguir">Prosseguir</button>
+        <button id="cancelar">cancelar</button>
+      </div>
+    </div>
+  </section>
+
   <main>
     <span>Olá ,</span>
     <h1>Pessoa</h1>
-
-    
-    <form id="marcador-horario">
-      <h2>Marcar horario</h2>
-
-      <label for="tipo" >Tipo de serviço</label>
-      <select name="tipo" id="tipo">
-        <option value=""></option>
-        <option value="barba">Barba</option>
-        <option value="cabelo">Cabelo</option>
-        <option value="face">Face</option>
-        <option value="barba+cabelo">Barba + Cabelo</option>
-        <option value="completa">Completa</option>
-      </select>
-      <label for="servico" id="tipoLabel">Serviço</label>
-      <select name="servico" id="servico" >
-        <option value=""></option>
-        <optgroup id="barbagp">
-          <option value="alinhamento">Alinhamento</option>
-          <option value="higienica">Higiênica</option>
-          <option value="tradicional">Tradicional</option>
-          <option value="personalizada">Personalizada</option>
-        </optgroup>
-        <optgroup id="cabelogp">
-          <option value="corte">Corte</option>
-          <option value="alizamento">Alizamento</option>
-          <option value="pintura">Pintura</option>
-          <option value="preenchimento">Preenchimento</option>
-        </optgroup>
-        <optgroup id="facegp">
-          <option value="corte">Limpeza</option>
-          <option value="alizamento">Peeling</option>
-          <option value="pintura">Harmonização</option>
-        </optgroup>
-      </select>
-      <label for="dia">Escolha um dia</label>
-      <input type="date" name="dia" id="dia">
-      <select name="horas" id="horas">
-        <option value=""></option>
-        <optgroup label="manhã">
-          <option value="8">08:00</option>
-          <option value="9">09:00</option>
-          <option value="10">10:00</option>
-          <option value="11">11:00</option>
-        </optgroup>
-        <optgroup label="tarde">
-          <option value="14">14:00</option>
-          <option value="15">15:00</option>
-          <option value="16">16:00</option>
-          <option value="17">17:00</option>
-          <option value="18">18:00</option>
-        </optgroup>
-      </select>
-      <button id="btnMarca">Marcar Horario</button>
-
-    </form>
     <section id="horarios-section">
+      <h2 class="ativador">Horarios</h2>
+      <span class="material-symbols-sharp sair">expand_more</span>
 
+      <div class="precisaAtiva">
+
+        <div class="horarioMarcado">
+          <span class="remove">X</span>
+          <span class="tipo">Corte + barba</span>
+          <span class="servico">Completo</span>
+          <footer>
+            <span class="diaMarcado">00/00/00</span>
+            <span>às</span>
+            <span class="horaMarcado">00:00</span>
+          </footer>
+        </div>
+        <div class="horarioMarcado">
+          <span class="remove">X</span>
+          <span class="tipo">Corte + barba</span>
+          <span class="servico">Completo</span>
+          <footer>
+            <span class="diaMarcado">00/00/00</span>
+            <span>às</span>
+            <span class="horaMarcado">00:00</span>
+          </footer>
+        </div>
+
+      </div>
     </section>
+  
+    <section id="containerMarcar">
+      <h2 class="ativador">Marcar horario</h2>
+      <span class="material-symbols-sharp sair">expand_more</span>
+      <form id="marcador-horario"  class="precisaAtiva">
+        <label for="tipo" >Tipo de serviço</label>
+        <select name="tipo" id="tipo">
+          <option value=""></option>
+          <option value="barba">Barba</option>
+          <option value="cabelo">Cabelo</option>
+          <option value="face">Face</option>
+          <option value="barba+cabelo">Barba + Cabelo</option>
+          <option value="completa">Completa</option>
+        </select>
+        <label for="servico" id="tipoLabel">Serviço</label>
+        <select name="servico" id="servico" >
+          <option value=""></option>
+          <optgroup id="barbagp">
+            <option value="alinhamento">Alinhamento</option>
+            <option value="higienica">Higiênica</option>
+            <option value="tradicional">Tradicional</option>
+            <option value="personalizada">Personalizada</option>
+          </optgroup>
+          <optgroup id="cabelogp">
+            <option value="corte">Corte</option>
+            <option value="alizamento">Alizamento</option>
+            <option value="pintura">Pintura</option>
+            <option value="preenchimento">Preenchimento</option>
+          </optgroup>
+          <optgroup id="facegp">
+            <option value="corte">Limpeza</option>
+            <option value="alizamento">Peeling</option>
+            <option value="pintura">Harmonização</option>
+          </optgroup>
+        </select>
+        <label for="dia" id="diaLabel">Escolha um dia</label>
+        <input type="date" name="dia" id="dia" min="2023-10-06" placeholder="dd/mm/yyyy">
+        <select name="horas" id="horas">
+          <option value=""></option>
+          <optgroup label="manhã">
+            <option value="8">08:00</option>
+            <option value="9">09:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+          </optgroup>
+          <optgroup label="tarde">
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+          </optgroup>
+        </select>
+        <button id="btnMarca">Marcar Horario</button>
+      </form>
+    </section>
+    
   </main>
 
   <script src="../menuMobile.js"></script>

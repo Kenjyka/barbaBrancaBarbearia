@@ -207,6 +207,12 @@ header.active #cadastro {
     .big-nav.perfil-nav {
         display: none!important;
     }
+    .perfil-nav {
+        display: none;
+    }
+    #links-mobile > ul > li.perfil-nav.active {
+        display: flex!important;
+    }
 }
 @media (min-width:801px) {
     .big-nav.perfil-nav.active {
