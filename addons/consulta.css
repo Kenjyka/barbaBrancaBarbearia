@@ -29,6 +29,10 @@ main > span {
 main > h1 {
     font-size: 2em;
     padding-left: 15px;
+    text-transform: capitalize;
+    max-width: 200px;
+    overflow: hidden;
+    height: 40px;
 }
 
 section h2 {

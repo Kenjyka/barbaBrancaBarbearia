@@ -6,6 +6,8 @@ const horas = document.querySelector("#horas")
 const diaLabel = document.querySelector("#diaLabel")
 const btnMarca = document.querySelector("#btnMarca")
 const sectHorarios = document.querySelector("#horarios-section")
+const pessoaH1 = document.querySelector("#pessoa")
+
 
 const hoje = new Date()
 const diaHoje = hoje.getDate() +1
@@ -104,7 +106,7 @@ data.addEventListener("blur", () => {
 horas.addEventListener("blur", () => {
     ativaBotao()
 })
-
+var removeAtual = ""
 btnMarca.addEventListener("click", evento => {
     evento.preventDefault()
     let horarios = []
@@ -170,7 +172,6 @@ if (localStorage.getItem("isAdmin")) {
             <span class="horaMarcado">${hora.hora}:00</span>
         </footer>
         ` 
-        alvo.appendChild(horarioDiv)
         btnMarca.parentElement.parentElement.classList.remove("active")    
     })
     
@@ -192,6 +193,7 @@ if (localStorage.getItem("isAdmin")) {
                 horarioDiv.classList.add("horarioMarcado")
                 horarioDiv.innerHTML = `
                 <span class="remove">X</span>
+                <span class="none">${horarios[index].id}</span>
                 <span class="tipo">${horarios[index].tipo}</span>
                 <span class="servico">${horarios[index].servico}</span>
                 <footer>
@@ -200,6 +202,14 @@ if (localStorage.getItem("isAdmin")) {
                     <span class="horaMarcado">${horarios[index].hora}:00</span>
                 </footer>
                ` 
+
+                alvo.appendChild(horarioDiv)
+                let sair = horarioDiv.querySelector(".remove")
+                sair.addEventListener("click", (evento) => {
+                    evento.stopImmediatePropagation()
+                    removeAtual = sair.parentElement
+                    fModal()
+                })
                 alvo.appendChild(horarioDiv)
                 btnMarca.parentElement.parentElement.classList.remove("active")
             }
@@ -207,6 +217,38 @@ if (localStorage.getItem("isAdmin")) {
             
         })
     }
+}
+
+
+const modal = document.querySelector("#modal")
+
+function fModal () {
+    modal.classList.toggle("active")
+
+    let aceitar = modal.querySelector("#prosseguir")
+    let negar = modal.querySelector("#cancelar")
+
+    aceitar.addEventListener("click", () => {
+        modal.classList.toggle("active")
+
+        let alvoRemoveAntes = removeAtual.querySelector(".none")
+        let alvoRemove = parseInt(alvoRemoveAntes.innerText)
+        console.log(alvoRemove)
+        let marcados = JSON.parse(localStorage.getItem("horarios"))
+        const index = marcados.findIndex( object => {
+            return object.id == alvoRemove
+        })
+
+        marcados.splice(index, 1)
+
+        localStorage.setItem("horarios", JSON.stringify(marcados))
+        location.reload()
+    })
+
+    negar.addEventListener("click", () => {
+        modal.classList.toggle("active")
+        removeAtual = ""
+    })
 }
 
 
@@ -228,3 +270,5 @@ sair.forEach(sairBtn => {
         sairBtn.parentElement.classList.remove("active")
     })
 })
+
+pessoaH1.innerText = JSON.parse(localStorage.getItem("loggedAccount")).nome
