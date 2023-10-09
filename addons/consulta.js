@@ -97,7 +97,9 @@ servico.addEventListener("blur", () => {
     ativaBotao()
 })
 data.addEventListener("blur", () => {
-    if (Date.parse(data.value) < Date.parse(`${anoHoje}-${mesHoje}-${diaHoje}`) || Date.parse(data.value) > Date.parse(maxDia)) {
+    let maxdiaCheck = new Date(maxDia)
+    maxdiaCheck.setDate(maxdiaCheck.getDate() + 1)
+    if (Date.parse(data.value) < Date.parse(`${anoHoje}-${mesHoje}-${diaHoje}`) || Date.parse(data.value) > Date.parse(maxdiaCheck)) {
         alert("coloque uma data válida")
         data.value = ""
         ativaBotao()
@@ -134,12 +136,13 @@ btnMarca.addEventListener("click", evento => {
         tipo: tipo.value,
         servico: servico.value
     }
-
-    let horasMarcadas = user.horasMarcadas
+    let horasMarcadas = user.horarios
     if (!horasMarcadas) {
         horasMarcadas = []
+        console.log(horasMarcadas)
     }
     horasMarcadas[horasMarcadas.length] = horarioId
+    console.log(horasMarcadas)
     user.horarios = horasMarcadas
 
     logins[index] = user
@@ -151,6 +154,8 @@ btnMarca.addEventListener("click", evento => {
     localStorage.setItem("horarios", JSON.stringify(horarios))
     horarioId++
     localStorage.setItem("horarioID", JSON.stringify(horarioId))
+
+    window.location.reload()
 })
 
 if (localStorage.getItem("isAdmin")) {
@@ -160,19 +165,22 @@ if (localStorage.getItem("isAdmin")) {
     horarios.forEach(hora => {
         let horarioFormatado = new Date(hora.dia)
 
+        let alvo = sectHorarios.querySelector("div")
         let horarioDiv = document.createElement("div")
         horarioDiv.classList.add("horarioMarcado")
         horarioDiv.innerHTML = `
         <span class="remove">X</span>
-        <span class="tipo">${hora.tipo}</span>
-        <span class="servico">${hora.servico}</span>
+        <span class="tipo">${horarios[index].tipo}</span>
+        <span class="servico">${horarios[index].servico}</span>
         <footer>
             <span class="diaMarcado">${horarioFormatado.getDay() + 1}/ ${horarioFormatado.getMonth() + 1}/ ${horarioFormatado.getFullYear()}</span>
             <span>às</span>
-            <span class="horaMarcado">${hora.hora}:00</span>
+            <span class="horaMarcado">${horarios[index].hora}:00</span>
         </footer>
         ` 
-        btnMarca.parentElement.parentElement.classList.remove("active")    
+
+        alvo.appendChild(horarioDiv)
+        btnMarca.parentElement.parentElement.classList.remove("active") 
     })
     
 } else {
@@ -210,7 +218,6 @@ if (localStorage.getItem("isAdmin")) {
                     removeAtual = sair.parentElement
                     fModal()
                 })
-                alvo.appendChild(horarioDiv)
                 btnMarca.parentElement.parentElement.classList.remove("active")
             }
             

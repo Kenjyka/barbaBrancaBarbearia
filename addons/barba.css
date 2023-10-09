@@ -1,0 +1,260 @@
+@import url(../header.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #000;
+
+    & li:hover > div {
+        background-color: #000;
+    }
+}
+
+
+body {
+    background-color: black;
+
+    &::-webkit-scrollbar {
+        background-color: #000;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: 2px solid #fff;
+        border-radius: 20px;
+    }
+}
+
+main > section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: calc(100vh + 100px);
+    position: relative;
+    display: flex;
+    max-width: 1920px;
+    box-sizing: border-box;
+    padding: 100px!important;
+    justify-content: space-between;
+
+    & .bottom {
+        height: 80%;
+        justify-content: flex-end!important;
+
+        & > a {
+            font-size: 1.2em;
+            text-decoration: none;
+            border: 1px solid #fff;
+            width: 150px;
+            text-align: center;
+            padding: 5px 20px;
+            text-transform: uppercase;
+            transition: color 1s, background-color 1s;
+
+            &:hover {
+                background-color: #fff;
+                border: 0;
+                color: #000;
+            }
+        }
+    }
+
+    & > aside {
+        width: 300px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+
+        & > h1 {
+            text-transform: uppercase;
+            font-size: 2.3em;
+            text-align: center;
+        }
+
+        & > p {
+            font-size: 1.3em;
+            text-align: justify;
+            text-align-last: center;
+        }
+    }
+}
+
+#normal {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: calc(100vh - 60px + 100px);
+    margin-top: 60px;
+    background-image: url(../imagens/barbas/normal.jpg);
+    
+}
+
+#alinhamento {
+    background-image: url(../imagens/barbas/alinhamento.jpg);
+}
+
+#higienica {
+    background-image: url(../imagens/barbas/higienica.jpg);
+}
+
+#tradicional {
+    background-image: url(../imagens/barbas/tradicional.jpg);
+}
+
+#personalizada {
+    background-image: url(../imagens/barbas/personalizada.jpg);
+    height: 100vh;
+}
+
+.corte-corte {
+    display: flex;
+    height:100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    left: 0;
+
+    & > .alinhador {
+        display: flex;
+        width: 400px;
+        justify-content: space-between;
+        height: 100%;
+    }
+}
+
+.tesouras-box {
+    rotate: -90deg;
+    position: relative;
+    margin-top: -60px;
+    width: 2px;
+
+    & > img {
+        width: 50px;
+    }
+
+    & > .tesoura-cima {
+        width: 58px;
+        position: absolute;
+        right: 9px;
+        animation: infinitecuttinup infinite 1s;
+        bottom: 3px;
+    }
+
+    & > .tesoura-baixo {
+        position: absolute;
+        right: .8px;
+        bottom: 2px;
+        animation: infinitecuttindown infinite 1s;
+    }
+}
+
+.right {
+    rotate: 90deg;
+    margin-right: 70px;
+    margin-top: 70px;
+
+    & > .tesoura-cima {
+        bottom: 3px;
+    }
+
+    & > .tesoura-baixo {
+        bottom: 2px;
+    }
+}
+
+.logged {
+    display: none;
+}
+.notLogged {
+    display: none;
+}
+
+.active {
+    display: flex;
+}
+
+@keyframes infinitecuttinup {
+    0% {
+        rotate: 0deg;
+    }
+
+    20% {
+        rotate: 0deg;
+    }
+    40% {
+        rotate: 30deg;
+    }
+    60% {
+        rotate: 0deg;
+    }
+    80% {
+        rotate: 30deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@keyframes infinitecuttindown {
+    0% {
+        rotate: 0deg;
+    }
+
+    20% {
+        rotate: 0deg;
+    }
+    40% {
+        rotate: -30deg;
+    }
+    60% {
+        rotate: 0deg;
+    }
+    80% {
+        rotate: -30deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@media (max-width: 800px) {
+    main > section {
+        flex-direction: column;
+        padding: 100px 20px!important;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+
+        
+
+
+        & > aside {
+            background-color: #00000085;
+
+            & > h1 {
+                font-size: 1.5em;
+            }
+
+            & > p {
+                font-size: 1em;
+            }
+        }
+        & > .bottom {
+            justify-content: center!important;
+            align-items: center;
+        }
+    }
+    
+}
