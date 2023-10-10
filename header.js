@@ -7,6 +7,9 @@ console.log(perfil)
 btnSair.addEventListener("click", () => {
   localStorage.setItem("isLoggedIn", JSON.stringify(false))
   localStorage.removeItem("loggedAccount")
+  if (localStorage.getItem("isAdmin")) {
+    localStorage.removeItem("isAdmin")
+  }
 })
 
 if(localStorage.getItem("isLoggedIn")  == "true") {

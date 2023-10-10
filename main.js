@@ -75,6 +75,20 @@ setInterval(() => {
 }, 5000);
 
 
+if (!localStorage.getItem("logins")) {
+  let adminLogin = {
+    email: "admin@admin.com",
+    nome: "Administrador",
+    senha: "adm",
+    comentarios: [],
+    admin: "true"
+  }
+
+  let logins = []
+  logins[logins.length] = adminLogin 
+  localStorage.setItem("logins", JSON.stringify(logins))
+}
+
 
 // aba de comentarios
 if (!localStorage.getItem("section-1")) {
@@ -102,57 +116,58 @@ if (!localStorage.getItem("comentarios")) {
   localStorage.setItem("comentarios", JSON.stringify([
     {
     id: 1,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Barba Perfeita</span>
+    <p>Ótimo artigo! Sempre tive dificuldade em manter minha barba em boa forma, mas essas dicas realmente me ajudaram. Mal posso esperar para experimentar os produtos recomendados.
+    </p>
+    <small>João da Silva</small>`
   },
   {
     id: 2,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Barba de Respeito</span>
+    <p>Como uma mulher que ama uma barba bem cuidada, acho essas dicas super valiosas. Compartilhei com meu namorado, e agora ele está mais empenhado em manter sua barba impecável!.</p>
+    <small>Maria Pereira</small>`
   },
   {
     id:3,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Dicas Essenciais</span>
+    <p>Adorei as dicas sobre hidratação. Minha barba costumava ficar áspera e com coceira, mas depois de seguir essas orientações, ela está muito mais suave. Obrigado ao autor por compartilhar esses conhecimentos!</p>
+    <small>Pedro Santos</small>`
   },
   {
     id: 4,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Confiança Renovada</span>
+    <p>Este artigo abordou a questão da calvície de maneira realista e informativa. Meu marido lida com a calvície e, após ler isso, ele se sentiu mais confiante em sua aparência. Excelentes dicas para quem está passando por isso.</p>
+    <small>Ana Oliveira</small>`
   },
   {
     id:5,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Soluções Variadas</span>
+    <p>Como alguém que enfrentou a calvície, aprecio as opções variadas apresentadas aqui. Acredito que a chave é encontrar o que funciona melhor para cada pessoa, seja um tratamento médico ou simplesmente abraçar a careca com estilo!</p>
+    <small>Carlos Lima</small>`
   },
   {
     id: 6,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Abraçando a Mudança</span>
+    <p>Acho que é importante lembrar que a calvície não deve afetar a autoestima. Este artigo destaca a importância de abraçar a mudança e encontrar beleza na autenticidade. A calvície pode ser um novo começo!</p>
+    <small>Fernanda Rodrigues</small>`
   },
   {
     id: 7,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Rotina Simplificada</span>
+    <p>Adorei as dicas para cuidados capilares masculinos! Ter uma rotina simples e eficaz faz toda a diferença. Estou ansioso para experimentar os produtos recomendados e melhorar a saúde do meu cabelo.</p>
+    <small>Pedro Ferreira</small>`
   },
   {
     id: 8,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Autoestima em Alta</span>
+    <p>Às vezes, os homens esquecem o quanto é importante cuidar do cabelo. Este artigo lembra a todos nós que cuidar dos fios não é apenas sobre vaidade, mas também sobre autoestima e bem-estar. Ótimas sugestões!</p>
+    <small>André Silva</small>`
   },
   {
     id: 9,
-    comentario: `<span class="titulo">Lorem, ipsum dolor.</span>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo excepturi corporis voluptatem perferendis nulla dignissimos ducimus non earum ipsum, molestias repellat praesentium ut consectetur maiores. Dignissimos quisquam vitae similique itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores alias, quasi at odit cum harum quam reprehenderit delectus, voluptates voluptas possimus itaque fugiat commodi aliquid doloremque porro sed, mollitia veniam.</p>
-    <small>pessoa</small>`
+    comentario: `<span class="titulo">Diversidade de Estilos</span>
+    <p>Estou sempre em busca de novos estilos de cabelo, e este artigo trouxe muita inspiração. É incrível como pequenas mudanças no corte ou na rotina de cuidados podem fazer uma grande diferença na aparência geral. Muito informativo!</p>
+    <small>João Santos</small>`
   }
 
 ]))

@@ -160,28 +160,32 @@ btnMarca.addEventListener("click", evento => {
 
 if (localStorage.getItem("isAdmin")) {
     let horarios = JSON.parse(localStorage.getItem("horarios"))
+    console.log(horarios)
     let alvo = sectHorarios.querySelector("div")
 
-    horarios.forEach(hora => {
-        let horarioFormatado = new Date(hora.dia)
-
-        let alvo = sectHorarios.querySelector("div")
-        let horarioDiv = document.createElement("div")
-        horarioDiv.classList.add("horarioMarcado")
-        horarioDiv.innerHTML = `
-        <span class="remove">X</span>
-        <span class="tipo">${horarios[index].tipo}</span>
-        <span class="servico">${horarios[index].servico}</span>
-        <footer>
-            <span class="diaMarcado">${horarioFormatado.getDay() + 1}/ ${horarioFormatado.getMonth() + 1}/ ${horarioFormatado.getFullYear()}</span>
-            <span>às</span>
-            <span class="horaMarcado">${horarios[index].hora}:00</span>
-        </footer>
-        ` 
-
-        alvo.appendChild(horarioDiv)
-        btnMarca.parentElement.parentElement.classList.remove("active") 
-    })
+    if (horarios) {
+        horarios.forEach(hora => {
+            let horarioFormatado = new Date(hora.dia)
+    
+            let horarioDiv = document.createElement("div")
+            horarioDiv.classList.add("horarioMarcado")
+            horarioDiv.innerHTML = `
+            <span class="remove">X</span>
+            <span class="tipo">${horarios[index].tipo}</span>
+            <span class="servico">${horarios[index].servico}</span>
+            <footer>
+                <span class="diaMarcado">${horarioFormatado.getDay() + 1}/ ${horarioFormatado.getMonth() + 1}/ ${horarioFormatado.getFullYear()}</span>
+                <span>às</span>
+                <span class="horaMarcado">${horarios[index].hora}:00</span>
+            </footer>
+            ` 
+    
+            alvo.appendChild(horarioDiv)
+            btnMarca.parentElement.parentElement.classList.remove("active") 
+        })
+    } 
+    let container = document.querySelector("#containerMarcar")
+    container.classList.add("none")
     
 } else {
     let user = JSON.parse(localStorage.getItem("loggedAccount"))
@@ -279,3 +283,20 @@ sair.forEach(sairBtn => {
 })
 
 pessoaH1.innerText = JSON.parse(localStorage.getItem("loggedAccount")).nome
+
+
+const body = document.querySelector("body")
+if (body.clientWidth > 801) {
+    let user = JSON.parse(localStorage.getItem("loggedAccount"))
+    let horarios = user.horarios
+
+    if (horarios.length > 0) {
+        let container = document.querySelector("#horarios-section")
+        container.classList.add("active")
+    } else {
+        let container = document.querySelector("#containerMarcar")
+        container.classList.add("active")
+    }
+
+    
+}

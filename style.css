@@ -264,6 +264,7 @@ body {
     max-height: 766px;
     width: 100vw;
     max-width: 1366px;
+    filter: grayscale(1);
 }
 .carousel-inner {
     max-height: 766px;

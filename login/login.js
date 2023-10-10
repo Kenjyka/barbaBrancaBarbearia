@@ -23,6 +23,9 @@ btnEnviar.addEventListener("click", evento => {
         if (logins[index].senha == senha.value && index != -1) {
             localStorage.setItem("isLoggedIn", true)
             localStorage.setItem("loggedAccount", JSON.stringify(logins[index]))
+            if (logins[index].admin == 'true') {
+                localStorage.setItem("isAdmin", true)
+            }
             window.location.href = "../index.html"
         } else if (logins[index].senha != senha.value){
             alert("Senha incorreta")
