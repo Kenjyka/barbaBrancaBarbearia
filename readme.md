@@ -2,7 +2,7 @@
 Um projeto de um site para uma barbearia não-existente com o intuito de demonstrar as capacidades de HTML, CSS e Javascript.
 
 ---
-
+Visiste ele agora [clicando aqui](https://kenjyka.github.io/barbaBrancaBarbearia/)
 ### Lista de afazeres
 - [x] animação tesoura
 - [x] nome da empresa fade-in
