@@ -285,7 +285,7 @@ secoesComentarios.forEach(element => {
     btn.addEventListener("click", (evento) => {
       evento.stopImmediatePropagation()
       barraComentario = btn.parentElement.querySelector(".secao-comentarios")
-      if (!localStorage.getItem("isLoggedIn")) {
+      if (localStorage.getItem("isLoggedIn") != "true") {
         alert("Essa ação necessita de Login")
       } else {
         let alvo = btn.parentElement.querySelector(".modal-comentar")
