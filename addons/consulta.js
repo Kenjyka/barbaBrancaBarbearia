@@ -164,13 +164,12 @@ if (localStorage.getItem("isAdmin")) {
     let alvo = sectHorarios.querySelector("div")
 
     if (horarios) {
-        horarios.forEach(hora => {
+        horarios.forEach( (hora, index) => {
             let horarioFormatado = new Date(hora.dia)
     
             let horarioDiv = document.createElement("div")
             horarioDiv.classList.add("horarioMarcado")
             horarioDiv.innerHTML = `
-            <span class="remove">X</span>
             <span class="tipo">${horarios[index].tipo}</span>
             <span class="servico">${horarios[index].servico}</span>
             <footer>
@@ -289,6 +288,7 @@ const body = document.querySelector("body")
 if (body.clientWidth > 801) {
     let user = JSON.parse(localStorage.getItem("loggedAccount"))
     let horarios = user.horarios
+    console.log(user)
 
     if (horarios.length > 0) {
         let container = document.querySelector("#horarios-section")
